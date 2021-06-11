@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="Images/lafargeLogo.PNG">
+    <h1>Brechin Daily Checklist</h1>
+    <h2>Primary</h2>
+    <form action="">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name">
+        <span>
+            <label for="">Shift:</label>
+            <label for="shift1">1</label>
+            <input type="radio" name="shift" id="shift1">
+            <label for="shift2">2</label>
+            <input type="radio" name="shift" id="shift2">
+
+        </span>
+        <p>
+            <label for="date">Date:</label>
+            <input type="date" name="date" id="date">
+        </p>
+        <button type="button" class="collapsible">Conveyors, Stacker Checklist</button>
+        <div class="content">
+            <table>
+                <tr>
+                    <td>Guards Present and undamaged</td>
+                    <td class="checklistTitle">Frame</td>
+                    <td class="checklistTitle">Belt</td>
+                    <td class="checklistTitle">Pulleys, Idlers</td>
+                    <td class="checklistTitle">Drive</td>
+                    <td class="checklistTitle"> Gear box</td>
+                </tr>
+                <tr>
+                    <td>Clean Walk-unders</td>
+                    <td>Structure</td>
+                    <td>Alignment</td>
+                    <td>Buildup, Lagging</td>
+                    <td>V-belts/Chain</td>
+                    <td>Oil Level & Temp</td>
+                </tr>
+                <tr>
+                    <td>Clean Gravity</td>
+                    <td>Chutes</td>
+                    <td>Wear Tears Holes</td>
+                    <td>Impact Beds for Wear</td>
+                    <td>Gearbox, Bearings</td>
+                    <td class="redText">(max 190°F)</td>
+                </tr>
+                <tr>
+                    <td>Take-up Enclosure</td>
+                    <td>Skirting</td>
+                    <td>Splices, Scrapers</td>
+                    <td>Retention Chains</td>
+                    <td>Electrical Cables</td>
+                    <td>Oil Level if Leakage Exists</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Buildup</td>
+                    <td>Rollers</td>
+                    <td>Bearing, Idlers</td>
+                </tr>
+            </table>
+        </div>
+        <p>
+            Crusher
+            <label for="yes">Yes</label>
+            <input type="checkbox" name="defect" id="yes">
+            <label for="no">No</label>
+            <input type="checkbox" name="defect" id="no">
+        </p>
+        <button type="button" class="collapsible">Feeder</button>
+        <div class="content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem harum iste sunt ipsa porro
+                quaerat voluptatibus earum nam nobis omnis quae corporis facilis dolore, neque culpa, deleniti
+                explicabo. Nulla, facilis!</p>
+        </div>
+        <p>
+
+        </p>
+        <button type="button" class="collapsible">Hydraulic Breaker</button>
+        <div class="content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem harum iste sunt ipsa porro
+                quaerat voluptatibus earum nam nobis omnis quae corporis facilis dolore, neque culpa, deleniti
+                explicabo. Nulla, facilis!</p>
+        </div>
+        <p>
+
+        </p>
+        <button type="button" class="collapsible">Crusher</button>
+        <div class="content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem harum iste sunt ipsa porro
+                quaerat voluptatibus earum nam nobis omnis quae corporis facilis dolore, neque culpa, deleniti
+                explicabo. Nulla, facilis!</p>
+        </div>
+        <button type="button" class="collapsible">Belt Scale</button>
+        <div class="content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem harum iste sunt ipsa porro
+                quaerat voluptatibus earum nam nobis omnis quae corporis facilis dolore, neque culpa, deleniti
+                explicabo. Nulla, facilis!</p>
+        </div> <button type="button" class="collapsible">Electrical</button>
+        <div class="content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem harum iste sunt ipsa porro
+                quaerat voluptatibus earum nam nobis omnis quae corporis facilis dolore, neque culpa, deleniti
+                explicabo. Nulla, facilis!</p>
+        </div>
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+
+            for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.display === "block") {
+                        content.style.display = "none";
+                    } else {
+                        content.style.display = "block";
+                    }
+                });
+            }
+        </script>
+    </form>
+</body>
+
+</html>

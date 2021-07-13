@@ -96,9 +96,13 @@ button{
 .spacing{
     margin-bottom: 0.7em;
 }
-.hiddenDefect{
+/* .hiddenDefect{
     display: none;
-}
+} */
+/* textarea{
+    columns: 7;
+    
+} */
 
 /* End of Main Content Styling */
 
@@ -256,7 +260,7 @@ input[type="number"]{
 @media (max-width:820px) {
     .twoTemps>label:nth-child(1){
     flex-basis: 30%;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     min-width: 250px;
     align-content: center;
     }
@@ -267,10 +271,10 @@ input[type="number"]{
     } */
     .hiddenDefect{
         width: 40%;
-        flex-basis: 50%;
+        flex-basis: 100%;
         justify-content: space-around;
         min-width: 200px;
-        padding-bottom: -10%;
+        
     }
     .twoTemps>label:nth-child(3){
     flex-basis: 30%;

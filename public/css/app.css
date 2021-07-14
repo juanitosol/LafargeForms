@@ -49,6 +49,12 @@ button{
     font-weight: bold;
     text-decoration: underline;
 }
+.formHeaderInfo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
 .formInputs{
     display: flex;
     flex-direction: row;
@@ -61,6 +67,7 @@ button{
     justify-content: space-around;
     flex-wrap: wrap;
 }
+
 .singleItem{
     display: flex;
     flex-direction: row;
@@ -70,6 +77,15 @@ button{
     font-family: Roboto, sans-serif;
     margin-bottom: 0.5em;
     font-weight: 600;
+}
+.defectLabel{
+    margin-bottom: 0.5em;
+    display: flex;
+    align-items: baseline;
+}
+.defectTitle{
+    margin-right: 5px;
+    padding-top: 5px;
 }
 .radioLabel{
     font-weight: 600;
@@ -95,14 +111,19 @@ button{
 }
 .spacing{
     margin-bottom: 0.7em;
+    max-width: 270px;
 }
-/* .hiddenDefect{
-    display: none;
-} */
-/* textarea{
-    columns: 7;
-    
-} */
+.hiddenDefect{
+    display: none;  
+}
+textarea{
+    resize: none; 
+    overflow: hidden;
+    min-height: 35px;
+    max-height: 100px;
+    width: 100%;
+    flex-basis: 100%;
+}
 
 /* End of Main Content Styling */
 
@@ -231,7 +252,7 @@ input[type="date"]{
 input[type="number"]{
     border: 1.9px solid black;
     border-radius: 0.5em;
-    width: 25%;
+    width: 90%;
     max-width: 85px;
     height: 2.5em;
     text-align: center;
@@ -247,6 +268,12 @@ input[type="number"]{
         align-content: space-around;
         flex-wrap: nowrap;
     }
+    .formHeaderInfo{
+        display: flex;
+        flex-direction: column;
+        align-content: space-around;
+        flex-wrap: nowrap; 
+    }
     .twoTemps{
         flex-direction: column;
         align-content: space-around;
@@ -255,53 +282,50 @@ input[type="number"]{
     .content{
         justify-content: flex-start;
     }
+    .hiddenDefect{
     
+        flex-basis: 100%;
+    }
+    .defectTitle{
+        padding-top: 0px;
+    }
 }
-@media (max-width:820px) {
+@media (min-width:820px) {
     .twoTemps>label:nth-child(1){
-    flex-basis: 30%;
-    justify-content: flex-start;
-    min-width: 250px;
+    flex-basis: 50%;
+    justify-content: space-around;
+    max-width: 300px;
     align-content: center;
     }
-    /* .twoTemps>label:nth-child(2){
-    flex-basis: 100%;
-    align-items: auto flex-start;
-    min-width: 200px;
-    } */
-    .hiddenDefect{
-        width: 40%;
-        flex-basis: 100%;
-        justify-content: space-around;
-        min-width: 200px;
-        
+    .twoTemps>label:nth-child(2){
+    flex-basis: 50%;
+    justify-content: space-around;
+    max-width: 300px;
     }
     .twoTemps>label:nth-child(3){
-    flex-basis: 30%;
-    justify-content: space-evenly;
-    
+    flex-basis: 50%;
+    justify-content: space-around;
+    max-width: 300px;
     }
     .twoTemps>label:nth-child(4){
     flex-basis: 50%;
-    justify-content: space-evenly;
-    min-width: 220px;
+    justify-content: space-around;
+    max-width: 300px;
     }
     .twoTemps{
         align-content: stretch;
     }
-
-}
-@media (min-width: 961px){
-    .formInputs{
-        display: flex;
-        flex-direction: row;
-        flex-basis: auto;
-        flex-grow: 1;
+    .hiddenDefect{
+        width: 40%;
+        flex-basis: 100%;
+        justify-content: space-around;
+        min-width: 200px;       
     }
     .headerImages{
         justify-content: space-around;
     }
 }
+
 /* End of Responsive Styling */
 #loader {
     display: none;

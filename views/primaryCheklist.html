@@ -28,7 +28,7 @@
     <form action="/submitData" method="POST" id="primaryForm" name="primaryForm">
         <!-- this is what controls the form and where it gets sent^^^!!! -->
         <section>
-            <div class="formInputs">
+            <div class="formHeaderInfo">
                 <!-- Name, Date and Shift Inputs -->
                 <!-- name -->
                 <label class="inputLabel">
@@ -57,7 +57,6 @@
         </section>
 
         <!-- Button TuneUp -->
-        <!-- Hidden Text Fields -->
         <!-- Post to web -->
 
         <section>
@@ -118,68 +117,71 @@
             <div class="formInputs">
                 <!-- These are the Inputs for every specific Part the titles can be changed-->
                 <label class="spacing">
-                    <span>Defect Present</span>
-                    <input type="checkbox" name="d4180" value="checked" onclick="displayPrompt('defect1444180')">
+                    <span>Gearbox Temp (°F)</span>
+                    <input type="number" name="gt4180" pattern="[0-9]*" inputmode="numeric">
                 </label>
-                <div class="hiddenDefect" id="defect1444180">
-                    <label class="inputLabel">
-                        <span>Defect:</span>
-                        <textarea wrap="soft" cols="40" type="text" name="" placeholder="Type Defect Here"></textarea>
-                    </label>
-                </div>
                 <label class="spacing">
                     <span>Guarding/Safety device</span>
                     <input type="checkbox" name="g4180" value="checked">
                 </label>
                 <label class="spacing">
-                    <span>Gearbox Temp (°F)</span>
-                    <input type="number" name="gt4180" pattern="[0-9]*" inputmode="numeric">
+                    <span>Defect Present</span>
+                    <input type="checkbox" name="d4180" value="checked" onclick="displayPrompt('defect1444180')">
                 </label>
+                <div class="hiddenDefect" id="defect1444180">
+                    <label class="defectLabel">
+                        <span class="defectTitle">Defect:</span>
+                        <textarea oninput="auto_grow(this)" wrap="hard" cols="200" type="text" name=""
+                            placeholder="Type Defect Here"></textarea>
+                    </label>
+                </div>
             </div>
             <!-- Repeat for Every Part copy/Paste-->
             <h4>Primary Transfer 1444179</h4>
             <div class="formInputs">
                 <label class="spacing">
-                    <span>Defect Present</span>
-                    <input type="checkbox" name="d4179" value="checked" onclick="displayPrompt('defect1444179')">
+                    <span>Gearbox Temp (°F)</span>
+                    <input type="number" name="gt4179" pattern="[0-9]*" inputmode="numeric">
                 </label>
-                <div class="hiddenDefect" id="defect1444179">
-                    <label class="inputLabel">
-                        <span>Defect:</span>
-                        <input type="text" name="" placeholder="Type Defect Here">
-                    </label>
-                </div>
                 <label class="spacing">
                     <span>Guarding/Safety device</span>
                     <input type="checkbox" name="g4179" value="checked">
                 </label>
                 <label>
-                    <span>Gearbox Temp (°F)</span>
-                    <input type="number" name="gt4179" pattern="[0-9]*" inputmode="numeric">
+                    <span>Defect Present</span>
+                    <input type="checkbox" name="d4179" value="checked" onclick="displayPrompt('defect1444179')">
                 </label>
+                <div class="hiddenDefect" id="defect1444179">
+                    <label class="defectLabel">
+                        <span class="defectTitle">Defect:</span>
+                        <textarea oninput="auto_grow(this)" wrap="hard" cols="200" type="text" name=""
+                            placeholder="Type Defect Here"></textarea>
+                    </label>
+                </div>
             </div>
             <!-- Repeat with h3 Title for every Major Section -->
             <h3>Stacker</h3>
             <h4>Primary 1444178</h4>
             <div class="formInputs">
                 <label class="spacing">
-                    <span>Defect Present</span>
-                    <input type="checkbox" name="d4178" value="checked" onclick="displayPrompt('defect1444178')">
+                    <span>Gearbox Temp (°F)</span>
+                    <input type="number" name="gt4178" pattern="[0-9]*" inputmode="numeric">
                 </label>
-                <div class="hiddenDefect" id="defect1444178">
-                    <label class="inputLabel">
-                        <span>Defect:</span>
-                        <input type="text" name="" placeholder="Type Defect Here">
-                    </label>
-                </div>
                 <label class="spacing">
                     <span>Guarding/Safety device</span>
                     <input type="checkbox" name="g4178" value="checked">
                 </label>
                 <label class="spacing">
-                    <span>Gearbox Temp (°F)</span>
-                    <input type="number" name="gt4178" pattern="[0-9]*" inputmode="numeric">
+                    <span>Defect Present</span>
+                    <input type="checkbox" name="d4178" value="checked" onclick="displayPrompt('defect1444178')">
                 </label>
+                <div class="hiddenDefect" id="defect1444178">
+                    <label class="defectLabel">
+                        <span class="defectTitle">Defect:</span>
+                        <textarea oninput="auto_grow(this)" wrap="hard" cols="200" type="text" name=""
+                            placeholder="Type Defect Here"></textarea>
+                    </label>
+                </div>
             </div>
         </section>
 
@@ -216,20 +218,6 @@
             <h4>Cedarapids 1740004</h4>
             <div class="twoTemps">
                 <label class="spacing">
-                    <span>Defect Present</span>
-                    <input type="checkbox" name="d0004" value="checked" onclick="displayPrompt('defect1740004')">
-                </label>
-                <div class="hiddenDefect" id="defect1740004">
-                    <label class="inputLabel">
-                        <div>Defect:</div>
-                        <input type="text" name="Defect1" placeholder="Type Defect Here">
-                    </label>
-                </div>
-                <label class="spacing">
-                    <span>Guarding/Safety device</span>
-                    <input type="checkbox" name="g0004" value="checked">
-                </label>
-                <label class="spacing">
                     <span>Drive Side Temp (°F)</span>
                     <input type="number" name="dst0004" pattern="[0-9]*" inputmode="numeric">
                 </label>
@@ -237,6 +225,21 @@
                     <span>Non Drive Side Temp (°F)</span>
                     <input type="number" name="ndst0004" pattern="[0-9]*" inputmode="numeric">
                 </label>
+                <label class="spacing">
+                    <span>Guarding/Safety device</span>
+                    <input type="checkbox" name="g0004" value="checked">
+                </label>
+                <label class="spacing">
+                    <span>Defect Present</span>
+                    <input type="checkbox" name="d0004" value="checked" onclick="displayPrompt('defect1740004')">
+                </label>
+                <div class="hiddenDefect" id="defect1740004">
+                    <label class="defectLabel">
+                        <span class="defectTitle">Defect:</span>
+                        <textarea oninput="auto_grow(this)" wrap="hard" cols="200" type="text" name=""
+                            placeholder="Type Defect Here"></textarea>
+                    </label>
+                </div>
             </div>
         </section>
 
@@ -322,20 +325,6 @@
             <h4>Cedarapids 5348 1639046</h4>
             <div class="twoTemps">
                 <label class="spacing">
-                    <span>Defect Present</span>
-                    <input type="checkbox" name="d9046" value="checked" onclick="displayPrompt('defect1639046')">
-                </label>
-                <div class="hiddenDefect" id="defect1639046">
-                    <label class="inputLabel">
-                        <div>Defect:</div>
-                        <input type="text" name="Defect1" placeholder="Type Defect Here">
-                    </label>
-                </div>
-                <label class="spacing">
-                    <span>Guarding/Safety device</span>
-                    <input type="checkbox" name="g9046" value="checked">
-                </label>
-                <label class="spacing">
                     <span>Drive Side Temp (°F)</span>
                     <input type="number" name="dst9046" pattern="[0-9]*" inputmode="numeric">
                 </label>
@@ -343,6 +332,21 @@
                     <span>Non Drive Side Temp (°F)</span>
                     <input type="number" name="ndst9046" pattern="[0-9]*" inputmode="numeric">
                 </label>
+                <label class="spacing">
+                    <span>Guarding/Safety device</span>
+                    <input type="checkbox" name="g9046" value="checked">
+                </label>
+                <label class="spacing">
+                    <span>Defect Present</span>
+                    <input type="checkbox" name="d9046" value="checked" onclick="displayPrompt('defect1639046')">
+                </label>
+                <div class="hiddenDefect" id="defect1639046">
+                    <label class="defectLabel">
+                        <span class="defectTitle">Defect:</span>
+                        <textarea oninput="auto_grow(this)" wrap="hard" cols="200" type="text" name=""
+                            placeholder="Type Defect Here"></textarea>
+                    </label>
+                </div>
             </div>
         </section>
 
@@ -457,6 +461,7 @@
 <footer>
     <script src="../public/js/collapsibleBar.js"></script>
     <script src="../public/js/displayPrompt.js"></script>
+    <script src="../public/js/shortFunctions.js"></script>
     <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
 </footer>
 

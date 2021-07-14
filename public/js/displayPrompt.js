@@ -5,5 +5,6 @@ function displayPrompt(promptId) {
     }
     else {
         x.style.display = "flex";
+        x.style.justifyContent = "flex-start"
     }
 }

@@ -79,7 +79,7 @@ app.post("/submitData", async (req, res) => {
     valueInputOption: "USER_ENTERED", //This will convert data into proper formats (like date into date not string), so won't take raw data
     resource: {
       values: [
-        [employee, date, shift,
+        [date, employee, shift,
           gt4180, gt4179,
           gt4178,
           dst0004, ndst0004,

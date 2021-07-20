@@ -1,4 +1,3 @@
-
 function onCollapseClick() {
     var coll = document.getElementsByClassName("collapsible");
     var i;
@@ -18,6 +17,14 @@ function onCollapseClick() {
 
 onCollapseClick();
 
-// https://dashboard.heroku.com/apps/lafarge-forms/deploy/heroku-git
-// https://stackoverflow.com/questions/1895476/how-do-i-style-a-select-dropdown-with-only-css
-// https://moderncss.dev/custom-select-styles-with-pure-css/
+function displayPrompt() {
+    var x = document.getElementsByClassName("hiddenPrompt");
+    if (x.style.display === "flex") {
+        x.style.display = "none";
+    }
+    else {
+        x.style.display = "flex";
+    }
+}
+// https://stackoverflow.com/questions/25870898/input-field-appear-after-selecting-a-check-box-html/25871183
+// https://stackoverflow.com/questions/36197187/how-to-hide-a-text-field-in-an-html-form

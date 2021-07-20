@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../public/css/app.css">
+    <link rel="stylesheet" href="app.css">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -18,45 +18,44 @@
     <header>
         <!-- This Header Includes the Logos and Titles, Try not to change the Logo Sizing but the Titles can just be changed! -->
         <div class="headerImages">
-            <img src="../public/images/lafargeLogo.png" class="lafargeLogo" width="40%" height="10%">
-            <img src="../public//images/maintenanceLogo.png" class="maintenanceLogo" width="18%">
+            <img src="Images/lafargeLogo.PNG" class="lafargeLogo" width="40%" height="10%">
+            <img src="Images/maintenanceLogo.PNG" class="maintenanceLogo" width="18%">
         </div>
         <!-- Change Titles Below between h1 and h2 tags -->
         <h1>Brechin Daily Checklist</h1>
         <h2>Primary</h2>
     </header>
-    <form action="/submitData" method="POST" id="primaryForm" name="primaryForm">
+    <form action="" method="POST" id="primaryForm" name="primaryForm">
         <!-- this is what controls the form and where it gets sent^^^!!! -->
-        <section>
-            <div class="formHeaderInfo">
-                <!-- Name, Date and Shift Inputs -->
-                <!-- name -->
-                <label class="inputLabel">
-                    <div>Name:</div>
-                    <input type="text" name="employee" id="employee" required>
+        <section class="formInputs">
+            <!-- Name, Date and Shift Inputs -->
+            <!-- name -->
+            <label for="Name" class="inputLabel">
+                <div>Name:</div>
+                <input type="text" name="Employee" id="Employee" required>
+            </label>
+            <!-- Date -->
+            <label for="Date" id="dateTitle" class="inputLabel">
+                <div>Date:</div>
+                <input type="date" name="Date" id="date" required>
+            </label>
+            <!-- shifts -->
+            <label for="" class="radioLabel">Shift:
+                <div></div>
+                <label>
+                    <span class="inputLabel">1</span>
+                    <input type="radio" name="Shift" id="shift1" value="1" required>
                 </label>
-                <!-- Date -->
-                <label class="inputLabel">
-                    <div>Date:</div>
-                    <input type="date" name="date" id="date" required>
+                <span></span>
+                <label for="shift2">
+                    <span class="inputLabel">2</span>
+                    <input type="radio" name="Shift" id="shift2" value="2">
                 </label>
-                <!-- shifts -->
-                <label class="radioLabel">Shift:
-                    <div></div>
-                    <label>
-                        <span class="inputLabel">1</span>
-                        <input type="radio" name="shift" id="shift1" value="1" required>
-                    </label>
-                    <span></span>
-                    <label>
-                        <span class="inputLabel">2</span>
-                        <input type="radio" name="shift" id="shift2" value="2">
-                    </label>
-                </label>
-            </div>
+            </label>
         </section>
 
         <!-- Button TuneUp -->
+        <!-- Hidden Text Fields -->
         <!-- Post to web -->
 
         <section>
@@ -117,90 +116,66 @@
             <div class="formInputs">
                 <!-- These are the Inputs for every specific Part the titles can be changed-->
                 <label class="spacing">
-                    <span>Gearbox Temp (°F)</span>
-                    <input type="number" name="gt4180" pattern="[0-9]*" inputmode="numeric">
+                    <span>Defect Present</span>
+                    <input type="checkbox" name="defect" onclick="displayPrompt()">
                 </label>
+                <div class="hiddenPrompt" id="">
+                    <label class="inputLabel">
+                        <div>Defect:</div>
+                        <input type="text" name="Defect1" placeholder="Type Defect Here">
+                    </label>
+                </div>
                 <label class="spacing">
                     <span>Guarding/Safety device</span>
-                    <input type="checkbox" name="g4180" id="g4180" value="checked"
-                        oninput="guardChecked('g4180','hg4180')">
+                    <input type="checkbox" name="Guard" value="yes">
                 </label>
-                <input id="hg4180" name="hg4180" type="hidden" value="Guard 1444180 Defective">
                 <label class="spacing">
-                    <span>Defect Present</span>
-                    <input type="checkbox" name="d4180" value="checked"
-                        onclick="displayPrompt('defect1444180','hd4180')">
+                    <span>Gearbox Temp (°F)</span>
+                    <input type="number" name="Discharge Temp (°F) 1444180" id="dischargeTemp" pattern="[0-9]*"
+                        inputmode="numeric">
                 </label>
-                <div class="hiddenDefect" id="defect1444180">
-                    <label class="defectLabel">
-                        <span class="defectTitle">Defect:</span>
-                        <textarea oninput="auto_grow(this)" wrap="hard" cols="200" type="text" id="hd4180" name="hd4180"
-                            placeholder="Type Defect Here"></textarea>
-                    </label>
-                    <label for="p4180">Priority: </label>
-                    <div class="prioritySelect">
-                        <select name="p4180" id="priority4180">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
-                </div>
             </div>
             <!-- Repeat for Every Part copy/Paste-->
             <h4>Primary Transfer 1444179</h4>
             <div class="formInputs">
                 <label class="spacing">
-                    <span>Gearbox Temp (°F)</span>
-                    <input type="number" name="gt4179" pattern="[0-9]*" inputmode="numeric">
-                </label>
-                <label class="spacing">
-                    <span>Guarding/Safety device</span>
-                    <input type="checkbox" name="g4179" id="g4179" value="checked"
-                        onclick="guardChecked('g4179','hg4179')">
-                </label>
-                <input id="hg4179" name="hg4179" type="hidden" value="Guard 1444179 Defective">
-                <label>
                     <span>Defect Present</span>
-                    <input type="checkbox" name="d4179" value="checked"
-                        onclick="displayPrompt('defect1444179','hd4179')">
+                    <input type="checkbox" name="defect" onclick="displayPrompt()">
                 </label>
-                <div class="hiddenDefect" id="defect1444179">
-                    <label class="defectLabel">
-                        <span class="defectTitle">Defect:</span>
-                        <textarea oninput="auto_grow(this)" wrap="hard" cols="200" type="text" id="hd4179" name="hd4179"
-                            placeholder="Type Defect Here"></textarea>
+                <div class="hiddenPrompt">
+                    <label class="inputLabel">
+                        <div>Defect:</div>
+                        <input type="text" name="Defect1" placeholder="Type Defect Here">
                     </label>
                 </div>
+                <label class="spacing">
+                    <span>Guarding/Safety device</span>
+                    <input type="checkbox" name="Guard" value="Yes">
+                </label>
+                <label for="dischargeTemp">
+                    <span>Gearbox Temp (°F)</span>
+                    <input type="number" name="Primary Transfer Temp (°F) 1444179" id="dischargeTemp" pattern="[0-9]*"
+                        inputmode="numeric">
+                </label>
             </div>
             <!-- Repeat with h3 Title for every Major Section -->
             <h3>Stacker</h3>
             <h4>Primary 1444178</h4>
             <div class="formInputs">
                 <label class="spacing">
-                    <span>Gearbox Temp (°F)</span>
-                    <input type="number" name="gt4178" pattern="[0-9]*" inputmode="numeric">
+                    <span>Defect Present</span>
+                    <input type="checkbox" name="defect">
                 </label>
                 <label class="spacing">
                     <span>Guarding/Safety device</span>
-                    <input type="checkbox" name="g4178" id="g4178" value="checked"
-                        onclick="guardChecked('g4178','hg4178')">
+                    <input type="checkbox" name="guarding">
                 </label>
-                <input id="hg4178" name="hg4178" type="hidden" value="Guard 1444178 Defective">
                 <label class="spacing">
-                    <span>Defect Present</span>
-                    <input type="checkbox" name="d4178" value="checked"
-                        onclick="displayPrompt('defect1444178', 'hd4178')">
+                    <span>Gearbox Temp (°F)</span>
+                    <input type="number" name="Primary Temp (°F) 1444178" id="dischargeTemp" pattern="[0-9]*"
+                        inputmode="numeric">
                 </label>
-                <div class="hiddenDefect" id="defect1444178">
-                    <label class="defectLabel">
-                        <span class="defectTitle">Defect:</span>
-                        <textarea oninput="auto_grow(this)" wrap="hard" cols="200" type="text" id="hd4178" name="hd4178"
-                            placeholder="Type Defect Here"></textarea>
-                    </label>
-                </div>
+
             </div>
         </section>
 
@@ -237,31 +212,22 @@
             <h4>Cedarapids 1740004</h4>
             <div class="twoTemps">
                 <label class="spacing">
-                    <span>Drive Side Temp (°F)</span>
-                    <input type="number" name="dst0004" pattern="[0-9]*" inputmode="numeric">
-                </label>
-                <label class="spacing">
-                    <span>Non Drive Side Temp (°F)</span>
-                    <input type="number" name="ndst0004" pattern="[0-9]*" inputmode="numeric">
+                    <span>Defect Present</span>
+                    <input type="checkbox" name="defect">
                 </label>
                 <label class="spacing">
                     <span>Guarding/Safety device</span>
-                    <input type="checkbox" name="g0004" id="g0004" value="checked"
-                        oninput="guardChecked('g0004','hg0004')">
+                    <input type="checkbox" name="guarding">
                 </label>
-                <input id="hg0004" name="hg0004" type="hidden" value="Guard 1740004 Defective">
                 <label class="spacing">
-                    <span>Defect Present</span>
-                    <input type="checkbox" name="d0004" value="checked"
-                        onclick="displayPrompt('defect1740004', 'hd0004')">
+                    <span>Drive Side Temp (°F)</span>
+                    <input type="number" name="Drive side Temp (°F) 1740004" id="driveSideTemp">
                 </label>
-                <div class="hiddenDefect" id="defect1740004">
-                    <label class="defectLabel">
-                        <span class="defectTitle">Defect:</span>
-                        <textarea oninput="auto_grow(this)" wrap="hard" cols="200" type="text" id="hd0004" name="hd0004"
-                            placeholder="Type Defect Here"></textarea>
-                    </label>
-                </div>
+                <label class="spacing">
+                    <span>Non Drive Side Temp (°F)</span>
+                    <input type="number" name="Non-Drive Side Temp (°F) 1740004" id="nonDriveSideTemp" pattern="[0-9]*"
+                        inputmode="numeric">
+                </label>
             </div>
         </section>
 
@@ -298,11 +264,8 @@
             <div class="singleItem">
                 <label class="spacing">
                     <span>Guarding/Safety device</span>
-                    <input type="checkbox" name="gHydrBreaker" id="gHydrBreaker" value="checked"
-                        oninput="guardChecked('gHydrBreaker','hgHydrBreaker')">
+                    <input type="checkbox" name="guarding">
                 </label>
-                <input id="hgHydrBreaker" name="hgHydrBreaker" type="hidden"
-                    value="Guard at Hydraulic Breaker Defective">
             </div>
         </section>
 
@@ -350,31 +313,24 @@
             <h4>Cedarapids 5348 1639046</h4>
             <div class="twoTemps">
                 <label class="spacing">
-                    <span>Drive Side Temp (°F)</span>
-                    <input type="number" name="dst9046" pattern="[0-9]*" inputmode="numeric">
-                </label>
-                <label class="spacing">
-                    <span>Non Drive Side Temp (°F)</span>
-                    <input type="number" name="ndst9046" pattern="[0-9]*" inputmode="numeric">
+                    <span>Defect Present</span>
+                    <input type="checkbox" name="defect">
                 </label>
                 <label class="spacing">
                     <span>Guarding/Safety device</span>
-                    <input type="checkbox" name="g9046" id="g9046" value="checked"
-                        oninput="guardChecked('g9046','hg9046')">
+                    <input type="checkbox" name="guarding">
                 </label>
-                <input id="hg9046" name="hg9046" type="hidden" value="Guard 1639046 Defective">
-                <label class="spacing">
-                    <span>Defect Present</span>
-                    <input type="checkbox" name="d9046" value="checked"
-                        onclick="displayPrompt('defect1639046','hd9046')">
+                <label for="driveSideTemp" class="spacing">
+                    <span>Drive Side Temp (°F)</span>
+                    <input type="number" name="Drive side Temp (°F) 5348" id="driveSideTemp" pattern="[0-9]*"
+                        inputmode="numeric">
                 </label>
-                <div class="hiddenDefect" id="defect1639046">
-                    <label class="defectLabel">
-                        <span class="defectTitle">Defect:</span>
-                        <textarea oninput="auto_grow(this)" wrap="hard" cols="200" type="text" id="hd9046" name="hd9046"
-                            placeholder="Type Defect Here"></textarea>
-                    </label>
-                </div>
+                <label for="nonDriveSideTemp" class="spacing">
+                    <span>Non Drive Side Temp (°F)</span>
+                    <input type="number" name="Non-Drive Side Temp (°F) 5348" id="nonDriveSideTemp" pattern="[0-9]*"
+                        inputmode="numeric">
+                </label>
+
             </div>
         </section>
 
@@ -398,10 +354,8 @@
             <div class="singleItem">
                 <label class="spacing">
                     <span>Guarding/Safety device</span>
-                    <input type="checkbox" name="gBeltScale" id="gBeltScale" value="checked"
-                        oninput="guardChecked('gBeltScale','hgBeltScale')">
+                    <input type="checkbox" name="guarding">
                 </label>
-                <input id="hgBeltScale" name="hgBeltScale" type="hidden" value="Guard Field Conveyor Defective">
             </div>
         </section>
 
@@ -438,10 +392,8 @@
             <div class="singleItem">
                 <label class="spacing">
                     <span>Guarding/Safety device</span>
-                    <input type="checkbox" name="gElectrical" id="gElectrical" value="checked"
-                        oninput="guardChecked('gElectrical','hgElectrical')">
+                    <input type="checkbox" name="guarding">
                 </label>
-                <input id="hgElectrical" name="hgElectrical" type="hidden" value="Guard Electrical Defective">
             </div>
         </section>
 
@@ -472,32 +424,64 @@
             </div>
         </section>
 
-
         <section>
             <h3>Electrical Trailer</h3>
             <div class="formInput">
                 <label class="spacing">
                     <span>Tools in Shed</span>
-                    <input type="checkbox" name="tools" id="tools" value="checked"
-                        oninput="guardChecked('tools','hTools')">
+                    <input type="checkbox" name="Tools">
                 </label>
-                <input id="hTools" name="hTools" type="hidden" value="Tools Not in Shed">
             </div>
         </section>
-
         <div class="formInputs">
             <button type="submit" class="submitButton">Submit</button>
         </div>
-        <input type="hidden" name="sections" id="" value="Primary">
         <div id="loader"></div>
+        </div>
+
+        <script src="app.js"></script>
+
+        <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
+        <script>
+            var spinner = $('#loader');
+            const scriptURLC = 'https://script.google.com/macros/s/AKfycbzYiiURLXYmigL2iRS-XukNXPowuG0phj-ZDuc-EwKyp779e_0/exec'
+            const serverlessForm = document.forms['primaryForm'];
+
+            serverlessForm.addEventListener('submit', e => {
+                e.preventDefault();
+                spinner.show();
+
+
+                fetch(scriptURLC, {
+                    method: 'POST',
+                    body: new FormData(serverlessForm)
+                })
+                    .then(res => {
+
+                        console.log(res);
+                        spinner.hide();
+
+                        if (res['status'] == 200) {
+                            swal("Your form has been submitted!",
+                                "We will get back to you soon. Have a great day!", "success");
+                            return true;
+
+                        } else {
+                            swal("Something went wrong!", "Please try after some time", "error");
+
+                        }
+                        document.getElementById('submitForm').classList.remove('loading');
+                    })
+                    .catch(error => {
+
+                        swal("Something went wrong!", "Please try after some time", "error");
+                        // todo enable submit button
+
+                    })
+            });
+        </script>
     </form>
 
 </body>
-<footer>
-    <script src="../public/js/collapsibleBar.js"></script>
-    <script src="../public/js/displayPrompt.js"></script>
-    <script src="../public/js/shortFunctions.js"></script>
-    <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
-</footer>
 
 </html>

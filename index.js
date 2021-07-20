@@ -1,3 +1,9 @@
+if (process.env.NODE_ENV !== "production") {
+  require('dotenv').config();
+};
+
+
+
 const express = require('express')
 const { google } = require('googleapis');
 const app = express();
@@ -7,12 +13,7 @@ const path = require('path');
 app.use(express.static(__dirname));
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/crazy", async (req, res) => {
 
-
-
-  res.send(getRows);
-});
 
 
 app.get("/", (req, res) => {
@@ -33,7 +34,7 @@ app.post("/submitData", async (req, res) => {
   const googleSheets = google.sheets({ version: "v4", auth: client });
 
 
-  const spreadsheetId = "1P5fsBfez51Up6wQPcE9YPRq9_xGWI51NmOxZWUDBmuQ";
+  const spreadsheetId = process.env.SPREADSHEET_ID;
 
   //collect data from req.body by destructuring the object. These are the variables that represent each section of the form filled
   const {
@@ -44,8 +45,12 @@ app.post("/submitData", async (req, res) => {
     d0004, g0004, dst0004, ndst0004,
     gHydrBreaker,
     d9046, g9046, dst9046, ndst9046,
-    gBeltScale, gElectrical, tools
+    gBeltScale, gElectrical, sections, hg4180, hg4179,
+    hg4178, hg0004, hgHydrBreaker, hg9046, hgBeltScale,
+    hgElectrical, hTools, hd4180, hd4179, hd4178, hd0004,
+    hd9046,
   } = req.body;
+
 
   const defectives = { d4180: d4180, d4179: d4179, d4178: d4178, d0004: d0004, d9046: d9046 }
   const guards = { g4180: g4180, g4179: g4179, g4178: g4178, g0004: g0004, g9046: g9046, gHydrBreaker: gHydrBreaker, gBeltScale: gBeltScale, gElectrical: gElectrical }
@@ -65,11 +70,9 @@ app.post("/submitData", async (req, res) => {
     if (!guards[key]) {
       defectArray.push(key)
       isAllGuardsChecked = 'No'
-    }
-  }
+    };
+  };
   // ^^ function is done, defectArray will have guards or defects that had issues stored
-
-
 
   //write rows to spreadsheet
   await googleSheets.spreadsheets.values.append({
@@ -88,13 +91,17 @@ app.post("/submitData", async (req, res) => {
         ], //these are the values that will be input into a single row, order matters
       ]
     }
-  })
+  });
 
-
-
+  const allDefects = [
+    hd4180, hd4179, hd4178, hd0004, hd9046, hg4180, hg4179,
+    hg4178, hg0004, hgHydrBreaker, hg9046,
+    hgBeltScale, hgElectrical, hTools,
+  ]
+  const allDefectsString = allDefects.filter(Boolean).join("\n");
 
   if (defectArray.length) {
-    const sections = defectArray.join(' , ')
+
     await googleSheets.spreadsheets.values.append({
       auth,
       spreadsheetId,
@@ -102,7 +109,8 @@ app.post("/submitData", async (req, res) => {
       valueInputOption: "USER_ENTERED",
       resource: {
         values: [
-          [date, employee, sections, '-', 'N/A']
+          [date, employee, sections, allDefectsString, '-',
+          ]
         ]
       }
     })
@@ -114,6 +122,6 @@ app.post("/submitData", async (req, res) => {
 });
 
 
-app.listen(3000, (req, res) => {
-  console.log('Running on port 3000!')
-})
+app.listen(process.env.PORT, () => console.log('serving on heroku'));
+
+// app.listen(3000, (req, res) => { console.log('Running on port 3000!') })

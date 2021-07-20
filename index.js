@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + '/views/primaryChecklist.html')
+  res.sendFile(path.join(__dirname, 'views', 'primaryCheklist.html'))
 });
 
 app.post("/submitData", async (req, res) => {

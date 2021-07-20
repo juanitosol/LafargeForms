@@ -122,6 +122,6 @@ app.post("/submitData", async (req, res) => {
 });
 
 
-// app.listen(process.env.PORT, () => console.log('serving on heroku'));
+app.listen(process.env.PORT, () => console.log('serving on heroku'));
 
-app.listen(3000, (req, res) => { console.log('Running on port 3000!') })
+// app.listen(3000, (req, res) => { console.log('Running on port 3000!') })

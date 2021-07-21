@@ -129,7 +129,10 @@ textarea{
 }
 select{
     appearance: none;
-    background-color: #009c74;
+    border-color: #777;
+    font-family: inherit;
+    font-size: inherit;
+    outline: none;
 }
 
 /* End of Main Content Styling */

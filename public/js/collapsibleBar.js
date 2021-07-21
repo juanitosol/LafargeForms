@@ -18,6 +18,3 @@ function onCollapseClick() {
 
 onCollapseClick();
 
-// https://dashboard.heroku.com/apps/lafarge-forms/deploy/heroku-git
-// https://stackoverflow.com/questions/1895476/how-do-i-style-a-select-dropdown-with-only-css
-// https://moderncss.dev/custom-select-styles-with-pure-css/

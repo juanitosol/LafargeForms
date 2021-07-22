@@ -81,7 +81,6 @@ button{
 .defectLabel{
     margin-bottom: 0.5em;
     display: flex;
-    align-items: baseline;
 }
 .defectTitle{
     margin-right: 5px;
@@ -123,16 +122,37 @@ textarea{
     min-height: 35px;
     max-height: 100px;
     width: 100%;
-    flex-basis: 92%;
+    flex-basis: 80%;
     border: 1px solid black;
     border-radius: 0.5em;
 }
 select{
-    appearance: none;
-    border-color: #777;
+    /* appearance: none; */
+    /* border-color: #777; */
     font-family: inherit;
-    font-size: inherit;
-    outline: none;
+    font-size: 0.9em;
+    border-radius: 0.5em;
+    /* outline: none; */
+    padding: 0.8em 2em 1em 1.5em;
+    background-color: darkolivegreen;
+    color: white;
+    border: 0;
+    max-width: 100px;
+}
+.prioritySelect{
+    display: flex;
+    position: relative;
+    /* width: 10%; */
+}
+.dropdownArrow{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    background-color: red;
+    height: 85%;
+    width: 3rem;
+    pointer-events: none;
 }
 
 /* End of Main Content Styling */
@@ -299,6 +319,13 @@ input[type="number"]{
     .defectTitle{
         padding-top: 0px;
     }
+    .hiddenDefect{
+        flex-direction: column;
+    }
+    select{
+        max-width: 250px;
+        
+    }
 }
 @media (min-width:680px){
     .twoTemps>label:nth-child(1){
@@ -333,6 +360,9 @@ input[type="number"]{
     }
     .headerImages{
         justify-content: space-around;
+    }
+    textArea{
+        flex-basis: 90%;
     }
 }
 @media (min-width:975px){

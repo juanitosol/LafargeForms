@@ -129,7 +129,7 @@
                 <label class="spacing">
                     <span>Defect Present</span>
                     <input type="checkbox" name="d4180" value="checked"
-                        onclick="displayPrompt('defect1444180','hd4180')">
+                        onclick="displayPrompt('defect1444180','hd4180','p4180')">
                 </label>
                 <div class="hiddenDefect" id="defect1444180">
                     <label class="defectLabel">
@@ -137,16 +137,23 @@
                         <textarea oninput="auto_grow(this)" wrap="hard" cols="200" type="text" id="hd4180" name="hd4180"
                             placeholder="Type Defect Here"></textarea>
                     </label>
-                    <label for="p4180">Priority: </label>
-                    <div class="prioritySelect">
-                        <select name="p4180" id="priority4180">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
+
+
+                    <span class="prioritySelect">
+                        <label class="defectLabel">
+                            <span class="defectTitle">Priority:</span>
+                            <select name="p4180" id="p4180">
+                                <option value=""></option>
+                                <option value="1">1: Immediate</option>
+                                <option value="2">2: Next Shutdown (within 24hrs)</option>
+                                <option value="3">3: Next Maintenance Day</option>
+                                <option value="4">4: Backlog</option>
+                                <option value="5">5: Special Project</option>
+                            </select>
+                            <span class="dropdownArrow"></span>
+                        </label>
+                    </span>
+
                 </div>
             </div>
             <!-- Repeat for Every Part copy/Paste-->

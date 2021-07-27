@@ -36,7 +36,7 @@ module.exports.postPrimaryChecklist = async (req, res) => {
         gBeltScale, gElectrical, sections, hg4180, hg4179,
         hg4178, hg0004, hgHydrBreaker, hg9046, hgBeltScale,
         hgElectrical, hTools, hd4180, hd4179, hd4178, hd0004,
-        hd9046,
+        hd9046, p4180, p4179, p4178, p0004, p9046,
     } = req.body;
 
 
@@ -88,6 +88,11 @@ module.exports.postPrimaryChecklist = async (req, res) => {
     ]
     const allDefectsString = allDefects.filter(Boolean).join("\n");
 
+    const allPriorities = [
+        p4180, p4179, p4178, p0004, p9046,
+    ]
+    const allPrioritiesString = allPriorities.filter(Boolean).join("\n");
+
     if (defectArray.length) {
 
         await googleSheets.spreadsheets.values.append({
@@ -97,7 +102,7 @@ module.exports.postPrimaryChecklist = async (req, res) => {
             valueInputOption: "USER_ENTERED",
             resource: {
                 values: [
-                    [date, employee, sections, allDefectsString, '-',
+                    [date, employee, sections, allPrioritiesString, allDefectsString, '-',
                     ]
                 ]
             }

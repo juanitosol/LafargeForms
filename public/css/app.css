@@ -116,6 +116,7 @@ button{
 .hiddenDefect{
     display: none;  
 }
+
 textarea{
     resize: none; 
     overflow: hidden;
@@ -133,26 +134,61 @@ select{
     font-size: 0.9em;
     border-radius: 0.5em;
     /* outline: none; */
-    padding: 0.8em 2em 1em 1.5em;
-    background-color: darkolivegreen;
-    color: white;
-    border: 0;
+    padding: 0.8em 3em 1em 1.5em;
+    background-color: transparent;
+    color: black;
+    border-color: black;
+    border: 1;
+    width: 100%;
     max-width: 100px;
 }
 .prioritySelect{
     display: flex;
     position: relative;
-    /* width: 10%; */
+    height: 100%;
+    max-width: 160px;
+    width: 100%;
+    padding-bottom: 0.5em;
 }
 .dropdownArrow{
     position: absolute;
     top: 0;
     right: 0;
     display: block;
-    background-color: red;
+    border: 1px solid black;
+    border-color: black;
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    background-color: #f9f900;
     height: 85%;
-    width: 3rem;
+    width: 1.8rem;
     pointer-events: none;
+}
+.dropdownArrow::before,
+.dropdownArrow::after{
+    --size: 0.7em;
+
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.dropdownArrow::before{
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-bottom: var(--size) solid rgb(95, 95, 95);
+
+    top: 30%;
+}
+.dropdownArrow::after{
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-top: var(--size) solid rgb(95, 95, 95);
+
+    top: 60%;
 }
 
 /* End of Main Content Styling */
@@ -225,9 +261,9 @@ input[type="checkbox"] {
     
 }
 input[type="checkbox"]::before {
-    content: "✔";
+    content: '\2714';
     position: relative;
-    font-size: 2.5em;
+    font-size: 2.3em;
     right: 2px;
     top: -0.3em;
     visibility: hidden;
@@ -292,6 +328,7 @@ input[type="number"]{
 /* End of Input Field Styling */
 
 /* Responsive Screensize Styling */
+
 @media (max-width: 580px){
     .formInputs{
         display: flex;
@@ -325,8 +362,19 @@ input[type="number"]{
     }
     select{
         max-width: 250px;
-        
+        max-height: 45px;
+        padding: 0.8em 0.9em 1em 1.5em;
     }
+    .prioritySelect{
+        max-width: 312px;
+    }
+    .dropdownArrow{
+        max-height: 45px;
+    }
+    .dropdownArrow::before,
+    .dropdownArrow::after{
+    --size: 0.5em;
+}
 }
 @media (min-width:680px){
     .twoTemps>label:nth-child(1){

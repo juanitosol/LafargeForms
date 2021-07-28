@@ -316,6 +316,7 @@ input[type="date"]{
     padding: 6px 10px;
     width: 175px;
     height: 30px ;
+    background-color: white;
     margin-bottom: 0.8em;
 }
 input[type="number"]{
@@ -432,24 +433,60 @@ input[type="number"]{
 }
 /* End of Responsive Styling */
 #loader {
-    /* display: none; */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    width: 100%;
-    background: url(../images/lafargeLogo.png) no-repeat center center;
-    z-index: 10000
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    border: 9px solid #f3f3f3;
+    border-top: 9px solid #009c74;
+    border-radius: 50%;
+    animation: spin 0.9s linear infinite;
 }
+
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+ 
 #lock-modal {
     display: none;
-    background-color: black;
-    opacity: 0.6;
-    position:absolute;
+    justify-content: center;
+    background-color: rgba(0,0,0,.60);
+    position:fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     border-radius: inherit;
 }
+.popup {   
+    width: 60%;
+    padding: 15px;
+    top: 25%;
+    min-width: 280px;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: #009c74;
+    background: white;
+    position: absolute;
+    z-index: 10001;
+    font-weight: 600;
+    font-size: 1.5em;
+    text-align: center;
+  }
+  .buttonArrangement{
+      display: flex;
+      justify-content: space-evenly;
+  }
+  #cancelButton{
+      background-color: rgb(255, 72, 72);
+  }

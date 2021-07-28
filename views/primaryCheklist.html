@@ -532,12 +532,20 @@
         </section>
 
         <div class="formInputs">
-            <button type="submit" class="submitButton">Submit</button>
+            <button type="button" id="formConfirm" class="submitButton">Submit</button>
         </div>
-        <input type="hidden" name="sections" id="" value="Primary">
 
-        <div id="lock-modal"></div>
+        <div id="lock-modal">
+            <div class="popup" id="popup">
+                <p>This will be saved. Continue ?</p>
+                <div class="buttonArrangement">
+                    <button type="button" class="submitButton" id="cancelButton">Cancel</button>
+                    <button type="submit" class="submitButton" id="okButton">Ok</button>
+                </div>
+            </div>
+        </div>
         <div id="loader"></div>
+        <input type="hidden" name="sections" id="" value="Primary">
     </form>
 
 </body>
@@ -545,8 +553,9 @@
     <script src="../public/js/collapsibleBar.js"></script>
     <script src="../public/js/displayPrompt.js"></script>
     <script src="../public/js/shortFunctions.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="../public/js/loader.js"></script>
-    <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script src="../public/js/confirmation.js"></script>
 </footer>
 
 </html>

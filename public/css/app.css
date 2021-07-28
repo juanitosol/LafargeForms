@@ -5,6 +5,7 @@
 body{
     background-color: white;
     font-family: "Source Sans Pro", sans-serif;
+    position: relative;
 }
 .headerImages{
     display: flex;
@@ -260,6 +261,7 @@ input[type="checkbox"] {
     vertical-align: -20px;
     
 }
+
 input[type="checkbox"]::before {
     content: '\2714';
     position: relative;
@@ -430,13 +432,24 @@ input[type="number"]{
 }
 /* End of Responsive Styling */
 #loader {
-    display: none;
+    /* display: none; */
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     width: 100%;
-    background: rgba(0, 0, 0, .75) url(Images/spinner.svg) no-repeat center center;
+    background: url(../images/lafargeLogo.png) no-repeat center center;
     z-index: 10000
+}
+#lock-modal {
+    display: none;
+    background-color: black;
+    opacity: 0.6;
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
 }

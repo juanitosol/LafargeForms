@@ -15,7 +15,3 @@ function displayPrompt(promptId, validateId, priorityId) {
         z.required = true;
     }
 }
-
-// https://ludwigstumpp.medium.com/part-1-how-to-build-a-web-form-with-a-loading-animation-using-html5-css3-jquery-dfa0bc6a900b
-// https://code-boxx.com/display-message-after-submitt-html-form/
-// https://stackoverflow.com/questions/9334636/how-to-create-a-dialog-with-yes-and-no-options

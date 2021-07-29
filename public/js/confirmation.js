@@ -11,7 +11,9 @@ function showConfirmation() {
 // If confirm btn is clicked , the function confim() is executed
 document.getElementById("okButton").onclick = function () { confirm() };
 function confirm() {
+    overlayme.style.display = "none";
     popup.style.display = "none";
+
 }
 
 // If cancel btn is clicked , the function cancel() is executed

@@ -110,7 +110,7 @@ module.exports.postPrimaryChecklist = async (req, res) => {
     }
 
 
-
-    res.redirect("/primaryChecklist");
+    res.redirect("/")
+    // res.redirect("/primaryChecklist");
 
 }

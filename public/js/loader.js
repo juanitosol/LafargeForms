@@ -9,8 +9,5 @@ $(document).ready(function () {
         lockModal.css("display", "block");
         loadingCircle.css("display", "block");
 
-        // form.children("input").each(function () {
-        //     $(this).attr("readonly", true);
-        // })
     })
 })

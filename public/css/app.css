@@ -5,6 +5,7 @@
 body{
     background-color: white;
     font-family: "Source Sans Pro", sans-serif;
+    position: relative;
 }
 .headerImages{
     display: flex;
@@ -81,7 +82,6 @@ button{
 .defectLabel{
     margin-bottom: 0.5em;
     display: flex;
-    align-items: baseline;
 }
 .defectTitle{
     margin-right: 5px;
@@ -117,15 +117,79 @@ button{
 .hiddenDefect{
     display: none;  
 }
+
 textarea{
     resize: none; 
     overflow: hidden;
     min-height: 35px;
     max-height: 100px;
     width: 100%;
-    flex-basis: 92%;
+    flex-basis: 80%;
     border: 1px solid black;
     border-radius: 0.5em;
+}
+select{
+    /* appearance: none; */
+    /* border-color: #777; */
+    font-family: inherit;
+    font-size: 0.9em;
+    border-radius: 0.5em;
+    /* outline: none; */
+    padding: 0.8em 3em 1em 1.5em;
+    background-color: transparent;
+    color: black;
+    border-color: black;
+    border: 1;
+    width: 100%;
+    max-width: 100px;
+}
+.prioritySelect{
+    display: flex;
+    position: relative;
+    height: 100%;
+    max-width: 160px;
+    width: 100%;
+    padding-bottom: 0.5em;
+}
+.dropdownArrow{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    border: 1px solid black;
+    border-color: black;
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    background-color: #f9f900;
+    height: 85%;
+    width: 1.8rem;
+    pointer-events: none;
+}
+.dropdownArrow::before,
+.dropdownArrow::after{
+    --size: 0.7em;
+
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.dropdownArrow::before{
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-bottom: var(--size) solid rgb(95, 95, 95);
+
+    top: 30%;
+}
+.dropdownArrow::after{
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-top: var(--size) solid rgb(95, 95, 95);
+
+    top: 60%;
 }
 
 /* End of Main Content Styling */
@@ -186,6 +250,7 @@ textarea{
 input[type="checkbox"], input[type="radio"]{
     -webkit-appearance: none;
     appearance: none;
+    color: #009c74;
 }
 input[type="checkbox"] {
     position: relative;
@@ -193,13 +258,14 @@ input[type="checkbox"] {
     height: 2em;
     border: 1px solid black;
     border-radius: 20%;
-    vertical-align: -12px;
-    color: #009c74;
+    vertical-align: -20px;
+    
 }
+
 input[type="checkbox"]::before {
-    content: "✔";
-    position: absolute;
-    font-size: 2em;
+    content: '\2714';
+    position: relative;
+    font-size: 2.3em;
     right: 2px;
     top: -0.3em;
     visibility: hidden;
@@ -250,6 +316,7 @@ input[type="date"]{
     padding: 6px 10px;
     width: 175px;
     height: 30px ;
+    background-color: white;
     margin-bottom: 0.8em;
 }
 input[type="number"]{
@@ -264,6 +331,7 @@ input[type="number"]{
 /* End of Input Field Styling */
 
 /* Responsive Screensize Styling */
+
 @media (max-width: 580px){
     .formInputs{
         display: flex;
@@ -292,6 +360,24 @@ input[type="number"]{
     .defectTitle{
         padding-top: 0px;
     }
+    .hiddenDefect{
+        flex-direction: column;
+    }
+    select{
+        max-width: 250px;
+        max-height: 45px;
+        padding: 0.8em 0.9em 1em 1.5em;
+    }
+    .prioritySelect{
+        max-width: 312px;
+    }
+    .dropdownArrow{
+        max-height: 45px;
+    }
+    .dropdownArrow::before,
+    .dropdownArrow::after{
+    --size: 0.5em;
+}
 }
 @media (min-width:680px){
     .twoTemps>label:nth-child(1){
@@ -327,6 +413,9 @@ input[type="number"]{
     .headerImages{
         justify-content: space-around;
     }
+    textArea{
+        flex-basis: 90%;
+    }
 }
 @media (min-width:975px){
     .twoTemps>label:nth-child(1){
@@ -350,7 +439,54 @@ input[type="number"]{
     left: 0;
     right: 0;
     bottom: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, .75) url(Images/spinner.svg) no-repeat center center;
-    z-index: 10000
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    border: 9px solid #f3f3f3;
+    border-top: 9px solid #009c74;
+    border-radius: 50%;
+    animation: spin 0.9s linear infinite;
 }
+
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+ 
+#lock-modal {
+    display: none;
+    justify-content: center;
+    background-color: rgba(0,0,0,.60);
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+}
+.popup {   
+    width: 60%;
+    padding: 15px;
+    top: 25%;
+    min-width: 280px;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: #009c74;
+    background: white;
+    position: absolute;
+    z-index: 10001;
+    font-weight: 600;
+    font-size: 1.5em;
+    text-align: center;
+  }
+  .buttonArrangement{
+      display: flex;
+      justify-content: space-evenly;
+  }
+  #cancelButton{
+      background-color: rgb(255, 72, 72);
+  }

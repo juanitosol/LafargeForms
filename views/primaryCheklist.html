@@ -56,9 +56,6 @@
             </div>
         </section>
 
-        <!-- Button TuneUp -->
-        <!-- Post to web -->
-
         <section>
             <!-- This is the content inside the Collapsible -->
             <button type="button" class="collapsible">Conveyors, Stacker Checklist</button>
@@ -118,7 +115,7 @@
                 <!-- These are the Inputs for every specific Part the titles can be changed-->
                 <label class="spacing">
                     <span>Gearbox Temp (°F)</span>
-                    <input type="number" name="gt4180" pattern="[0-9]*" inputmode="numeric">
+                    <input type="number" name="gt4180" pattern="[0-9]*" inputmode="numeric" required>
                 </label>
                 <label class="spacing">
                     <span>Guarding/Safety device</span>
@@ -129,7 +126,7 @@
                 <label class="spacing">
                     <span>Defect Present</span>
                     <input type="checkbox" name="d4180" value="checked"
-                        onclick="displayPrompt('defect1444180','hd4180')">
+                        onclick="displayPrompt('defect1444180','hd4180','p4180')">
                 </label>
                 <div class="hiddenDefect" id="defect1444180">
                     <label class="defectLabel">
@@ -145,7 +142,7 @@
             <div class="formInputs">
                 <label class="spacing">
                     <span>Gearbox Temp (°F)</span>
-                    <input type="number" name="gt4179" pattern="[0-9]*" inputmode="numeric">
+                    <input type="number" name="gt4179" pattern="[0-9]*" inputmode="numeric" required>
                 </label>
                 <label class="spacing">
                     <span>Guarding/Safety device</span>
@@ -156,7 +153,7 @@
                 <label>
                     <span>Defect Present</span>
                     <input type="checkbox" name="d4179" value="checked"
-                        onclick="displayPrompt('defect1444179','hd4179')">
+                        onclick="displayPrompt('defect1444179','hd4179','p4179')">
                 </label>
                 <div class="hiddenDefect" id="defect1444179">
                     <label class="defectLabel">
@@ -164,6 +161,18 @@
                         <textarea oninput="auto_grow(this)" wrap="hard" cols="200" type="text" id="hd4179" name="hd4179"
                             placeholder="Type Defect Here"></textarea>
                     </label>
+                    <span class="prioritySelect">
+                        <span class="defectTitle">Priority:</span>
+                        <select name="p4179" id="p4179">
+                            <option value=""></option>
+                            <option value="1">1: Immediate</option>
+                            <option value="2">2: Next Shutdown (within 24hrs)</option>
+                            <option value="3">3: Next Maintenance Day</option>
+                            <option value="4">4: Backlog</option>
+                            <option value="5">5: Special Project</option>
+                        </select>
+                        <span class="dropdownArrow"></span>
+                    </span>
                 </div>
             </div>
             <!-- Repeat with h3 Title for every Major Section -->
@@ -172,7 +181,7 @@
             <div class="formInputs">
                 <label class="spacing">
                     <span>Gearbox Temp (°F)</span>
-                    <input type="number" name="gt4178" pattern="[0-9]*" inputmode="numeric">
+                    <input type="number" name="gt4178" pattern="[0-9]*" inputmode="numeric" required>
                 </label>
                 <label class="spacing">
                     <span>Guarding/Safety device</span>
@@ -183,7 +192,7 @@
                 <label class="spacing">
                     <span>Defect Present</span>
                     <input type="checkbox" name="d4178" value="checked"
-                        onclick="displayPrompt('defect1444178', 'hd4178')">
+                        onclick="displayPrompt('defect1444178', 'hd4178','p4178')">
                 </label>
                 <div class="hiddenDefect" id="defect1444178">
                     <label class="defectLabel">
@@ -191,6 +200,18 @@
                         <textarea oninput="auto_grow(this)" wrap="hard" cols="200" type="text" id="hd4178" name="hd4178"
                             placeholder="Type Defect Here"></textarea>
                     </label>
+                    <span class="prioritySelect">
+                        <span class="defectTitle">Priority:</span>
+                        <select name="p4178" id="p4178">
+                            <option value=""></option>
+                            <option value="1">1: Immediate</option>
+                            <option value="2">2: Next Shutdown (within 24hrs)</option>
+                            <option value="3">3: Next Maintenance Day</option>
+                            <option value="4">4: Backlog</option>
+                            <option value="5">5: Special Project</option>
+                        </select>
+                        <span class="dropdownArrow"></span>
+                    </span>
                 </div>
             </div>
         </section>
@@ -229,11 +250,11 @@
             <div class="twoTemps">
                 <label class="spacing">
                     <span>Drive Side Temp (°F)</span>
-                    <input type="number" name="dst0004" pattern="[0-9]*" inputmode="numeric">
+                    <input type="number" name="dst0004" pattern="[0-9]*" inputmode="numeric" required>
                 </label>
                 <label class="spacing">
                     <span>Non Drive Side Temp (°F)</span>
-                    <input type="number" name="ndst0004" pattern="[0-9]*" inputmode="numeric">
+                    <input type="number" name="ndst0004" pattern="[0-9]*" inputmode="numeric" required>
                 </label>
                 <label class="spacing">
                     <span>Guarding/Safety device</span>
@@ -244,7 +265,7 @@
                 <label class="spacing">
                     <span>Defect Present</span>
                     <input type="checkbox" name="d0004" value="checked"
-                        onclick="displayPrompt('defect1740004', 'hd0004')">
+                        onclick="displayPrompt('defect1740004', 'hd0004','p0004')">
                 </label>
                 <div class="hiddenDefect" id="defect1740004">
                     <label class="defectLabel">
@@ -252,6 +273,18 @@
                         <textarea oninput="auto_grow(this)" wrap="hard" cols="200" type="text" id="hd0004" name="hd0004"
                             placeholder="Type Defect Here"></textarea>
                     </label>
+                    <span class="prioritySelect">
+                        <span class="defectTitle">Priority:</span>
+                        <select name="p0004" id="p0004">
+                            <option value=""></option>
+                            <option value="1">1: Immediate</option>
+                            <option value="2">2: Next Shutdown (within 24hrs)</option>
+                            <option value="3">3: Next Maintenance Day</option>
+                            <option value="4">4: Backlog</option>
+                            <option value="5">5: Special Project</option>
+                        </select>
+                        <span class="dropdownArrow"></span>
+                    </span>
                 </div>
             </div>
         </section>
@@ -357,7 +390,7 @@
                 <label class="spacing">
                     <span>Defect Present</span>
                     <input type="checkbox" name="d9046" value="checked"
-                        onclick="displayPrompt('defect1639046','hd9046')">
+                        onclick="displayPrompt('defect1639046','hd9046','p9046')">
                 </label>
                 <div class="hiddenDefect" id="defect1639046">
                     <label class="defectLabel">
@@ -365,6 +398,18 @@
                         <textarea oninput="auto_grow(this)" wrap="hard" cols="200" type="text" id="hd9046" name="hd9046"
                             placeholder="Type Defect Here"></textarea>
                     </label>
+                    <span class="prioritySelect">
+                        <span class="defectTitle">Priority:</span>
+                        <select name="p9046" id="p9046">
+                            <option value=""></option>
+                            <option value="1">1: Immediate</option>
+                            <option value="2">2: Next Shutdown (within 24hrs)</option>
+                            <option value="3">3: Next Maintenance Day</option>
+                            <option value="4">4: Backlog</option>
+                            <option value="5">5: Special Project</option>
+                        </select>
+                        <span class="dropdownArrow"></span>
+                    </span>
                 </div>
             </div>
         </section>
@@ -463,7 +508,6 @@
             </div>
         </section>
 
-
         <section>
             <h3>Electrical Trailer</h3>
             <div class="formInput">
@@ -477,10 +521,20 @@
         </section>
 
         <div class="formInputs">
-            <button type="submit" class="submitButton">Submit</button>
+            <button type="button" id="formConfirm" class="submitButton">Submit</button>
         </div>
-        <input type="hidden" name="sections" id="" value="Primary">
+
+        <div id="lock-modal">
+            <div class="popup" id="popup">
+                <p>This will be saved. Continue ?</p>
+                <div class="buttonArrangement">
+                    <button type="button" class="submitButton" id="cancelButton">Cancel</button>
+                    <button type="submit" class="submitButton" id="okButton">Ok</button>
+                </div>
+            </div>
+        </div>
         <div id="loader"></div>
+        <input type="hidden" name="sections" id="" value="Primary">
     </form>
 
 </body>
@@ -488,7 +542,10 @@
     <script src="../public/js/collapsibleBar.js"></script>
     <script src="../public/js/displayPrompt.js"></script>
     <script src="../public/js/shortFunctions.js"></script>
-    <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script src="../public/js/validation.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../public/js/loader.js"></script>
+    <script src="../public/js/confirmation.js"></script>
 </footer>
 
 </html>

@@ -1,4 +1,4 @@
-<!-- Version 1.0 Juan De Leon 07/07/2021 -->
+<!-- Version 1.0 Juan De Leon 07/29/2021 -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +25,7 @@
         <h1>Brechin Daily Checklist</h1>
         <h2>Primary</h2>
     </header>
-    <form action="/submitData" method="POST" id="primaryForm" name="primaryForm">
+    <form action="/submitData" method="POST" id="checklistForm" name="primaryForm">
         <!-- this is what controls the form and where it gets sent^^^!!! -->
         <section>
             <div class="formHeaderInfo">
@@ -134,7 +134,18 @@
                         <textarea oninput="auto_grow(this)" wrap="hard" cols="200" type="text" id="hd4180" name="hd4180"
                             placeholder="Type Defect Here"></textarea>
                     </label>
-                    <label for="p4180">Priority: </label>
+                    <span class="prioritySelect">
+                        <span class="defectTitle">Priority:</span>
+                        <select name="p4180" id="p4180">
+                            <option value=""></option>
+                            <option value="1">1: Immediate</option>
+                            <option value="2">2: Next Shutdown (within 24hrs)</option>
+                            <option value="3">3: Next Maintenance Day</option>
+                            <option value="4">4: Backlog</option>
+                            <option value="5">5: Special Project</option>
+                        </select>
+                        <span class="dropdownArrow"></span>
+                    </span>
                 </div>
             </div>
             <!-- Repeat for Every Part copy/Paste-->
@@ -473,7 +484,7 @@
             <h3>Electrical</h3>
             <div class="singleItem">
                 <label class="spacing">
-                    <span>Guarding/Safety device</span>
+                    <span>Housekeeping</span>
                     <input type="checkbox" name="gElectrical" id="gElectrical" value="checked"
                         oninput="guardChecked('gElectrical','hgElectrical')">
                 </label>

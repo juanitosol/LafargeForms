@@ -14,10 +14,12 @@ app.use(express.urlencoded({ extended: true }));
 //use available routing
 const primaryChecklistRoute = require('./routes/primaryChecklist');
 const mainAndSurgeChecklistRoute = require('./routes/mainAndSurgeChecklist');
-
-
+const secondary1ChecklistRoute = require('./routes/secondary1Checklist');
+const secondary2ChecklistRoute = require('./routes/secondary2Checklist');
 // app.use(primaryChecklistRoute);
-app.use(mainAndSurgeChecklistRoute);
+// app.use(mainAndSurgeChecklistRoute);
+// app.use(secondary1ChecklistRoute);
+app.use(secondary2ChecklistRoute);
 
 
 

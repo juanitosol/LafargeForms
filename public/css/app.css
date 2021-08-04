@@ -419,7 +419,7 @@ input[type="number"]{
 }
 @media (min-width:975px){
     .twoTemps>label:nth-child(1){
-        max-width: 225px;
+        max-width: 230px;
     }
     .twoTemps>label:nth-child(2){
         max-width: 260px;

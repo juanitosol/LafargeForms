@@ -33,15 +33,15 @@ module.exports.postPrimaryChecklist = async (req, res) => {
         d0004, g0004, dst0004, ndst0004,
         gHydrBreaker,
         d9046, g9046, dst9046, ndst9046,
-        gBeltScale, gElectrical, sections, hg4180, hg4179,
+        gBeltScale, sections, hg4180, hg4179,
         hg4178, hg0004, hgHydrBreaker, hg9046, hgBeltScale,
-        hgElectrical, hTools, hd4180, hd4179, hd4178, hd0004,
+        hd4180, hd4179, hd4178, hd0004,
         hd9046, p4180, p4179, p4178, p0004, p9046,
     } = req.body;
 
 
     const defectives = { d4180: d4180, d4179: d4179, d4178: d4178, d0004: d0004, d9046: d9046 }
-    const guards = { g4180: g4180, g4179: g4179, g4178: g4178, g0004: g0004, g9046: g9046, gHydrBreaker: gHydrBreaker, gBeltScale: gBeltScale, gElectrical: gElectrical }
+    const guards = { g4180: g4180, g4179: g4179, g4178: g4178, g0004: g0004, g9046: g9046, gHydrBreaker: gHydrBreaker, gBeltScale: gBeltScale }
     //analyzes if defectives are checked or if guards are unchecked
     const defectArray = []; //array is empty, but will systematically input any defects or issues into it
     let isAllGuardsChecked = 'Yes';
@@ -84,7 +84,7 @@ module.exports.postPrimaryChecklist = async (req, res) => {
     const allDefects = [
         hd4180, hd4179, hd4178, hd0004, hd9046, hg4180, hg4179,
         hg4178, hg0004, hgHydrBreaker, hg9046,
-        hgBeltScale, hgElectrical, hTools,
+        hgBeltScale,
     ]
     const allDefectsString = allDefects.filter(Boolean).join("\n");
 

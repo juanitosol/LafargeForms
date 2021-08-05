@@ -1,4 +1,4 @@
-<!-- Version 1.0 Juan De Leon ?/?/2021 -->
+<!-- Version 1.0 Juan De Leon 08/03/2021 -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +25,7 @@
         <h1>Brechin Daily Checklist</h1>
         <h2>Secondary-2</h2>
     </header>
-    <form action="/submitData" method="POST" id="checklistForm" name="secondary2Form">
+    <form action="/submitData2" method="POST" id="checklistForm" name="secondary2Form">
         <!-- this is what controls the form and where it gets sent^^^!!! -->
         <section>
             <div class="formHeaderInfo">
@@ -107,175 +107,6 @@
         <section>
             <h3>Screens</h3>
             <h4 class="importantText">Reminder: Bearing Temp to be taken every 2 weeks max 190°F</h4>
-            <h4>#1 Simplicity 1441302</h4>
-            <!-- "h3" and "h4" are just titles with h3 being the bigger one these can be changed ^ -->
-            <div class="twoTemps">
-                <!-- These are the Inputs for every specific Part the titles can be changed-->
-                <label class="spacing">
-                    <span>Drive Side Temp (°F)</span>
-                    <input type="number" name="dst1302" pattern="[0-9]*" inputmode="numeric">
-                </label>
-                <label class="spacing">
-                    <span>Non Drive Side Temp (°F)</span>
-                    <input type="number" name="ndst1302" pattern="[0-9]*" inputmode="numeric">
-                </label>
-                <label class="spacing">
-                    <span>Guarding/Safety device</span>
-                    <input type="checkbox" name="g1302" id="g1302" value="checked"
-                        oninput="guardChecked('g1302','hg1302')">
-                </label>
-                <input id="hg1302" name="hg1302" type="hidden" value="Guard 1441302 Defective">
-                <label class="spacing">
-                    <span>Defect Present</span>
-                    <input type="checkbox" name="d1302" value="checked"
-                        onclick="displayPrompt('defect1441302','hd1302','p1302')">
-                </label>
-                <div class="hiddenDefect" id="defect1441302">
-                    <label class="defectLabel">
-                        <span class="defectTitle">Defect:</span>
-                        <textarea oninput="auto_grow(this)" wrap="hard" cols="200" type="text" id="hd1302" name="hd1302"
-                            placeholder="Type Defect Here"></textarea>
-                    </label>
-                    <span class="prioritySelect">
-                        <span class="defectTitle">Priority:</span>
-                        <select name="p1302" id="p1302">
-                            <option value=""></option>
-                            <option value="1">1: Immediate</option>
-                            <option value="2">2: Next Shutdown (within 24hrs)</option>
-                            <option value="3">3: Next Maintenance Day</option>
-                            <option value="4">4: Backlog</option>
-                            <option value="5">5: Special Project</option>
-                        </select>
-                        <span class="dropdownArrow"></span>
-                    </span>
-                </div>
-            </div>
-            <!-- Repeat for Every Part copy/Paste-->
-            <h4>#8 Simplicity 1741032</h4>
-            <div class="twoTemps">
-                <label class="spacing">
-                    <span>Drive Side Temp (°F)</span>
-                    <input type="number" name="dst1032" pattern="[0-9]*" inputmode="numeric">
-                </label>
-                <label class="spacing">
-                    <span>Non Drive Side Temp (°F)</span>
-                    <input type="number" name="ndst1032" pattern="[0-9]*" inputmode="numeric">
-                </label>
-                <label class="spacing">
-                    <span>Guarding/Safety device</span>
-                    <input type="checkbox" name="g1032" id="g1032" value="checked"
-                        onclick="guardChecked('g1032','hg1032')">
-                </label>
-                <input id="hg1032" name="hg1032" type="hidden" value="Guard 1741032 Defective">
-                <label>
-                    <span>Defect Present</span>
-                    <input type="checkbox" name="d1032" value="checked"
-                        onclick="displayPrompt('defect1741032','hd1032','p1032')">
-                </label>
-                <div class="hiddenDefect" id="defect1741032">
-                    <label class="defectLabel">
-                        <span class="defectTitle">Defect:</span>
-                        <textarea oninput="auto_grow(this)" wrap="hard" cols="200" type="text" id="hd1032" name="hd1032"
-                            placeholder="Type Defect Here"></textarea>
-                    </label>
-                    <span class="prioritySelect">
-                        <span class="defectTitle">Priority:</span>
-                        <select name="p1032" id="p1032">
-                            <option value=""></option>
-                            <option value="1">1: Immediate</option>
-                            <option value="2">2: Next Shutdown (within 24hrs)</option>
-                            <option value="3">3: Next Maintenance Day</option>
-                            <option value="4">4: Backlog</option>
-                            <option value="5">5: Special Project</option>
-                        </select>
-                        <span class="dropdownArrow"></span>
-                    </span>
-                </div>
-            </div>
-            <!-- Repeat for Every Part copy/Paste-->
-            <h4>#2 Dilon 1741028</h4>
-            <div class="twoTemps">
-                <label class="spacing">
-                    <span>Drive Side Temp (°F)</span>
-                    <input type="number" name="dst1028" pattern="[0-9]*" inputmode="numeric">
-                </label>
-                <label class="spacing">
-                    <span>Non Drive Side Temp (°F)</span>
-                    <input type="number" name="ndst1028" pattern="[0-9]*" inputmode="numeric">
-                </label>
-                <label class="spacing">
-                    <span>Guarding/Safety device</span>
-                    <input type="checkbox" name="g1028" id="g1028" value="checked"
-                        onclick="guardChecked('g1028','hg1028')">
-                </label>
-                <input id="hg1028" name="hg1028" type="hidden" value="Guard 1741028 Defective">
-                <label>
-                    <span>Defect Present</span>
-                    <input type="checkbox" name="d1028" value="checked"
-                        onclick="displayPrompt('defect1741028','hd1028','p1028')">
-                </label>
-                <div class="hiddenDefect" id="defect1741028">
-                    <label class="defectLabel">
-                        <span class="defectTitle">Defect:</span>
-                        <textarea oninput="auto_grow(this)" wrap="hard" cols="200" type="text" id="hd1028" name="hd1028"
-                            placeholder="Type Defect Here"></textarea>
-                    </label>
-                    <span class="prioritySelect">
-                        <span class="defectTitle">Priority:</span>
-                        <select name="p1028" id="p1028">
-                            <option value=""></option>
-                            <option value="1">1: Immediate</option>
-                            <option value="2">2: Next Shutdown (within 24hrs)</option>
-                            <option value="3">3: Next Maintenance Day</option>
-                            <option value="4">4: Backlog</option>
-                            <option value="5">5: Special Project</option>
-                        </select>
-                        <span class="dropdownArrow"></span>
-                    </span>
-                </div>
-            </div>
-            <!-- Repeat for Every Part copy/Paste-->
-            <h4>#3 Dilon 10142349</h4>
-            <div class="twoTemps">
-                <label class="spacing">
-                    <span>Drive Side Temp (°F)</span>
-                    <input type="number" name="dst2349" pattern="[0-9]*" inputmode="numeric">
-                </label>
-                <label class="spacing">
-                    <span>Non Drive Side Temp (°F)</span>
-                    <input type="number" name="ndst2349" pattern="[0-9]*" inputmode="numeric">
-                </label>
-                <label class="spacing">
-                    <span>Guarding/Safety device</span>
-                    <input type="checkbox" name="g2349" id="g2349" value="checked"
-                        onclick="guardChecked('g2349','hg2349')">
-                </label>
-                <input id="hg2349" name="hg2349" type="hidden" value="Guard 10142349 Defective">
-                <label>
-                    <span>Defect Present</span>
-                    <input type="checkbox" name="d2349" value="checked"
-                        onclick="displayPrompt('defect10142349','hd2349','p2349')">
-                </label>
-                <div class="hiddenDefect" id="defect10142349">
-                    <label class="defectLabel">
-                        <span class="defectTitle">Defect:</span>
-                        <textarea oninput="auto_grow(this)" wrap="hard" cols="200" type="text" id="hd2349" name="hd2349"
-                            placeholder="Type Defect Here"></textarea>
-                    </label>
-                    <span class="prioritySelect">
-                        <span class="defectTitle">Priority:</span>
-                        <select name="p2349" id="p2349">
-                            <option value=""></option>
-                            <option value="1">1: Immediate</option>
-                            <option value="2">2: Next Shutdown (within 24hrs)</option>
-                            <option value="3">3: Next Maintenance Day</option>
-                            <option value="4">4: Backlog</option>
-                            <option value="5">5: Special Project</option>
-                        </select>
-                        <span class="dropdownArrow"></span>
-                    </span>
-                </div>
-            </div>
             <!-- Repeat for Every Part copy/Paste-->
             <h4>#4 Dilon 1441304</h4>
             <div class="twoTemps">

@@ -3,10 +3,10 @@ const router = express.Router();
 
 const mainAndSurgeChecklist = require('../controllers/mainAndSurgeChecklist');
 
-// router.get('/mainAndSurgeChecklist', mainAndSurgeChecklist.renderMainAndSurgeChecklist);
-router.get('/', mainAndSurgeChecklist.renderMainAndSurgeChecklist);
+router.get('/mainAndSurgeChecklist', mainAndSurgeChecklist.renderMainAndSurgeChecklist);
+// router.get('/', mainAndSurgeChecklist.renderMainAndSurgeChecklist);
 
-router.post('/submitData', mainAndSurgeChecklist.postMainAndSurgeChecklist);
+router.post('/submitDataM', mainAndSurgeChecklist.postMainAndSurgeChecklist);
 
 
 module.exports = router;

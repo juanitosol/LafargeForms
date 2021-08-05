@@ -137,7 +137,7 @@ module.exports.postSecondary3Checklist = async (req, res) => {
     }
 
 
-    res.redirect("/")
-    // res.redirect("/secondary3Checklist");
+    // res.redirect("/")
+    res.redirect("/secondary3Checklist");
 
 }

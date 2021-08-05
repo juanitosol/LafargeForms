@@ -25,7 +25,7 @@
         <h1>Brechin Daily Checklist</h1>
         <h2>Main and Surge</h2>
     </header>
-    <form action="/submitData" method="POST" id="checklistForm" name="mainAndSurgeForm">
+    <form action="/submitDataM" method="POST" id="checklistForm" name="mainAndSurgeForm">
         <!-- this is what controls the form and where it gets sent^^^!!! -->
         <section>
             <div class="formHeaderInfo">
@@ -78,7 +78,7 @@
                         <td>Structure</td>
                         <td>Alignment</td>
                         <td>Alignment</td>
-                        <td>Buildup, Bearigns</td>
+                        <td>Buildup, Bearings</td>
                         <td>Impact Bed Wear</td>
                         <td>V-Belts</td>
                         <td>Tires/Runway</td>
@@ -119,18 +119,17 @@
             <h4>Tunnel Discharge 1444029</h4>
             <!-- "h3" and "h4" are just titles with h3 being the bigger one these can be changed ^ -->
             <div class="formInputs">
-                <!-- These are the Inputs for every specific Part the titles can be changed-->
                 <label class="spacing">
                     <span>Gearbox Temp (°F)</span>
-                    <input type="number" name="gt4029" pattern="[0-9]*" inputmode="numeric" required>
+                    <input type="number" name="gt4029" pattern="[0-9]*" inputmode="numeric">
                 </label>
                 <label class="spacing">
                     <span>Guarding/Safety device</span>
                     <input type="checkbox" name="g4029" id="g4029" value="checked"
-                        oninput="guardChecked('g4029','hg4029')">
+                        onclick="guardChecked('g4029','hg4029')">
                 </label>
                 <input id="hg4029" name="hg4029" type="hidden" value="Guard 1444029 Defective">
-                <label class="spacing">
+                <label>
                     <span>Defect Present</span>
                     <input type="checkbox" name="d4029" value="checked"
                         onclick="displayPrompt('defect1444029','hd4029','p4029')">
@@ -308,57 +307,6 @@
             </div>
         </section>
 
-        <section>
-            <!-- repeat of Table Section above just different text, amount of rows and columns -->
-            <button type="button" class="collapsible">Electrical</button>
-            <div class="content">
-                <table>
-                    <tr>
-                        <td class="checklistTitle">Check:</td>
-                        <td>Check Lights</td>
-                        <td>Electrical Panel Doors</td>
-                    </tr>
-                    <tr>
-                        <td>Material Buildup</td>
-                        <td>No Flamables</td>
-                        <td>Rubber Mats</td>
-                    </tr>
-                    <tr>
-                        <td>Locks/Lock-Out Tags</td>
-                        <td>Electric Diagram</td>
-                        <td class="importantText">Primary Operator to Clean Electrical Trailer Daily</td>
-                    </tr>
-                    <tr>
-                        <td>Temperature</td>
-                        <td>Fire Extinguisher</td>
-                        <td class="importantText">Check Transformer for Damage, Oil and Buildup</td>
-                    </tr>
-                </table>
-            </div>
-        </section>
-
-        <section>
-            <h3>Electrical</h3>
-            <h4>#2 Substation 1464094</h4>
-            <div class="singleItem">
-                <label class="spacing">
-                    <span>Guarding/Safety Device</span>
-                    <input type="checkbox" name="g4094" id="g4094" value="checked"
-                        oninput="guardChecked('g4094','hg4094')">
-                </label>
-                <input id="hg4094" name="hg4094" type="hidden" value="Guard Electrical Substation 1464094 Defective">
-            </div>
-            <h4>Substation Electrical Room</h4>
-            <div class="singleItem">
-                <label class="spacing">
-                    <span>Guarding/Safety Device</span>
-                    <input type="checkbox" name="gElectrical" id="gElectrical" value="checked"
-                        oninput="guardChecked('gElectrical','hgElectrical')">
-                </label>
-                <input id="hgElectrical" name="hgElectrical" type="hidden"
-                    value="Guard Electrical Substation Defective">
-            </div>
-        </section>
 
         <div class="formInputs">
             <button type="button" id="formConfirm" class="submitButton">Submit</button>

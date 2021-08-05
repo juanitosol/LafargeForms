@@ -32,8 +32,6 @@ module.exports.postMainAndSurgeChecklist = async (req, res) => {
         d4026, g4026, gt4026, hg4026, hd4026, p4026,
         d4027, g4027, gt4027, hg4027, hd4027, p4027,
         d4028, g4028, gt4028, hg4028, hd4028, p4028,
-        g4094, hg4094,
-        gElectrical, hgElectrical,
 
     } = req.body;
 
@@ -44,8 +42,7 @@ module.exports.postMainAndSurgeChecklist = async (req, res) => {
     }
     const guards = {
         g4029: g4029, g4030: g4030, g4026: g4026,
-        g4027: g4027, g4028: g4028, g4094: g4094,
-        gElectrical: gElectrical
+        g4027: g4027, g4028: g4028
     }
     //analyzes if defectives are checked or if guards are unchecked
     const defectArray = []; //array is empty, but will systematically input any defects or issues into it
@@ -71,7 +68,7 @@ module.exports.postMainAndSurgeChecklist = async (req, res) => {
     await googleSheets.spreadsheets.values.append({
         auth,
         spreadsheetId,
-        range: "Main!A:M", //state the horizontal range and which sheet you are appending data to
+        range: "Main!A:AB", //state the horizontal range and which sheet you are appending data to
         valueInputOption: "USER_ENTERED", //This will convert data into proper formats (like date into date not string), so won't take raw data
         resource: {
             values: [
@@ -86,8 +83,7 @@ module.exports.postMainAndSurgeChecklist = async (req, res) => {
 
     const allDefects = [
         hd4029, hd4030, hd4026, hd4027, hd4028, hg4029,
-        hg4030, hg4026, hg4027, hg4028, hg4094,
-        hgElectrical,
+        hg4030, hg4026, hg4027, hg4028,
     ]
     const allDefectsString = allDefects.filter(Boolean).join("\n");
 
@@ -113,7 +109,7 @@ module.exports.postMainAndSurgeChecklist = async (req, res) => {
     }
 
 
-    res.redirect("/")
-    // res.redirect("/mainAndSurgeChecklist");
+    // res.redirect("/")
+    res.redirect("/mainAndSurgeChecklist");
 
 }

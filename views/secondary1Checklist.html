@@ -110,7 +110,6 @@
             <h4>#1 Simplicity 1441302</h4>
             <!-- "h3" and "h4" are just titles with h3 being the bigger one these can be changed ^ -->
             <div class="twoTemps">
-                <!-- These are the Inputs for every specific Part the titles can be changed-->
                 <label class="spacing">
                     <span>Drive Side Temp (°F)</span>
                     <input type="number" name="dst1302" pattern="[0-9]*" inputmode="numeric">
@@ -122,13 +121,13 @@
                 <label class="spacing">
                     <span>Guarding/Safety device</span>
                     <input type="checkbox" name="g1302" id="g1302" value="checked"
-                        oninput="guardChecked('g1302','hg1302')">
+                        onchange="guardChecked('g1302','hg1302')">
                 </label>
-                <input id="hg1302" name="hg1302" type="hidden" value="Guard 1441302 Defective">
-                <label class="spacing">
+                <input id="hg1032" name="hg1302" type="hidden" value="Guard 1441302 Defective">
+                <label>
                     <span>Defect Present</span>
                     <input type="checkbox" name="d1302" value="checked"
-                        onclick="displayPrompt('defect1441302','hd1302','p1302')">
+                        onchange="displayPrompt('defect1441302','hd1302','p1302')">
                 </label>
                 <div class="hiddenDefect" id="defect1441302">
                     <label class="defectLabel">
@@ -164,13 +163,13 @@
                 <label class="spacing">
                     <span>Guarding/Safety device</span>
                     <input type="checkbox" name="g1032" id="g1032" value="checked"
-                        onclick="guardChecked('g1032','hg1032')">
+                        onchange="guardChecked('g1032','hg1032')">
                 </label>
-                <input id="hg1032" name="hg1032" type="hidden" value="Guard 1741032 Defective">
+                <input id="hg1032" name="hg1032" type="hidden" value="Guard 444 Defective">
                 <label>
                     <span>Defect Present</span>
                     <input type="checkbox" name="d1032" value="checked"
-                        onclick="displayPrompt('defect1741032','hd1032','p1032')">
+                        onchange="displayPrompt('defect1741032','hd1032','p1032')">
                 </label>
                 <div class="hiddenDefect" id="defect1741032">
                     <label class="defectLabel">
@@ -206,13 +205,13 @@
                 <label class="spacing">
                     <span>Guarding/Safety device</span>
                     <input type="checkbox" name="g1028" id="g1028" value="checked"
-                        onclick="guardChecked('g1028','hg1028')">
+                        onchange="guardChecked('g1028','hg1028')">
                 </label>
                 <input id="hg1028" name="hg1028" type="hidden" value="Guard 1741028 Defective">
                 <label>
                     <span>Defect Present</span>
                     <input type="checkbox" name="d1028" value="checked"
-                        onclick="displayPrompt('defect1741028','hd1028','p1028')">
+                        onchange="displayPrompt('defect1741028','hd1028','p1028')">
                 </label>
                 <div class="hiddenDefect" id="defect1741028">
                     <label class="defectLabel">
@@ -248,13 +247,13 @@
                 <label class="spacing">
                     <span>Guarding/Safety device</span>
                     <input type="checkbox" name="g2349" id="g2349" value="checked"
-                        onclick="guardChecked('g2349','hg2349')">
+                        onchange="guardChecked('g2349','hg2349')">
                 </label>
                 <input id="hg2349" name="hg2349" type="hidden" value="Guard 10142349 Defective">
                 <label>
                     <span>Defect Present</span>
                     <input type="checkbox" name="d2349" value="checked"
-                        onclick="displayPrompt('defect10142349','hd2349','p2349')">
+                        onchange="displayPrompt('defect10142349','hd2349','p2349')">
                 </label>
                 <div class="hiddenDefect" id="defect10142349">
                     <label class="defectLabel">
@@ -338,13 +337,13 @@
                 <label class="spacing">
                     <span>Guarding/Safety device</span>
                     <input type="checkbox" name="g4055" id="g4055" value="checked"
-                        oninput="guardChecked('g4055','hg4055')">
+                        onchange="guardChecked('g4055','hg4055')">
                 </label>
                 <input id="hg4055" name="hg4055" type="hidden" value="Guard 1444055 Defective">
                 <label class="spacing">
                     <span>Defect Present</span>
                     <input type="checkbox" name="d4055" value="checked"
-                        onclick="displayPrompt('defect1444055','hd4055','p4055')">
+                        onchange="displayPrompt('defect1444055','hd4055','p4055')">
                 </label>
                 <div class="hiddenDefect" id="defect1444055">
                     <label class="defectLabel">
@@ -376,13 +375,13 @@
                 <label class="spacing">
                     <span>Guarding/Safety device</span>
                     <input type="checkbox" name="g4058" id="g4058" value="checked"
-                        onclick="guardChecked('g4058','hg4058')">
+                        onchange="guardChecked('g4058','hg4058')">
                 </label>
                 <input id="hg4058" name="hg4058" type="hidden" value="Guard 1444058 Defective">
                 <label>
                     <span>Defect Present</span>
                     <input type="checkbox" name="d4058" value="checked"
-                        onclick="displayPrompt('defect1444058','hd4058','p4058')">
+                        onchange="displayPrompt('defect1444058','hd4058','p4058')">
                 </label>
                 <div class="hiddenDefect" id="defect1444058">
                     <label class="defectLabel">
@@ -414,13 +413,13 @@
                 <label class="spacing">
                     <span>Guarding/Safety device</span>
                     <input type="checkbox" name="g4045" id="g4045" value="checked"
-                        onclick="guardChecked('g4045','hg4045')">
+                        onchange="guardChecked('g4045','hg4045')">
                 </label>
                 <input id="hg4045" name="hg4045" type="hidden" value="Guard 1444045 Defective">
                 <label>
                     <span>Defect Present</span>
                     <input type="checkbox" name="d4045" value="checked"
-                        onclick="displayPrompt('defect1444045','hd4045','p4045')">
+                        onchange="displayPrompt('defect1444045','hd4045','p4045')">
                 </label>
                 <div class="hiddenDefect" id="defect1444045">
                     <label class="defectLabel">
@@ -453,13 +452,13 @@
                 <label class="spacing">
                     <span>Guarding/Safety device</span>
                     <input type="checkbox" name="g4120" id="g4120" value="checked"
-                        onclick="guardChecked('g4120','hg4120')">
+                        onchange="guardChecked('g4120','hg4120')">
                 </label>
                 <input id="hg4120" name="hg4120" type="hidden" value="Guard 1444120 Defective">
                 <label class="spacing">
                     <span>Defect Present</span>
                     <input type="checkbox" name="d4120" value="checked"
-                        onclick="displayPrompt('defect1444120', 'hd4120','p4120')">
+                        onchange="displayPrompt('defect1444120', 'hd4120','p4120')">
                 </label>
                 <div class="hiddenDefect" id="defect1444120">
                     <label class="defectLabel">
@@ -490,13 +489,13 @@
                 <label class="spacing">
                     <span>Guarding/Safety device</span>
                     <input type="checkbox" name="g2009" id="g2009" value="checked"
-                        onclick="guardChecked('g2009','hg2009')">
+                        onchange="guardChecked('g2009','hg2009')">
                 </label>
                 <input id="hg2009" name="hg2009" type="hidden" value="Guard 1442009 Defective">
                 <label class="spacing">
                     <span>Defect Present</span>
                     <input type="checkbox" name="d2009" value="checked"
-                        onclick="displayPrompt('defect1442009', 'hd2009','p2009')">
+                        onchange="displayPrompt('defect1442009', 'hd2009','p2009')">
                 </label>
                 <div class="hiddenDefect" id="defect1442009">
                     <label class="defectLabel">
@@ -527,13 +526,13 @@
                 <label class="spacing">
                     <span>Guarding/Safety device</span>
                     <input type="checkbox" name="g2042" id="g2042" value="checked"
-                        onclick="guardChecked('g2042','hg2042')">
+                        onchange="guardChecked('g2042','hg2042')">
                 </label>
                 <input id="hg2042" name="hg2042" type="hidden" value="Guard 1742042 Defective">
                 <label class="spacing">
                     <span>Defect Present</span>
                     <input type="checkbox" name="d2042" value="checked"
-                        onclick="displayPrompt('defect1742042', 'hd2042','p2042')">
+                        onchange="displayPrompt('defect1742042', 'hd2042','p2042')">
                 </label>
                 <div class="hiddenDefect" id="defect1742042">
                     <label class="defectLabel">

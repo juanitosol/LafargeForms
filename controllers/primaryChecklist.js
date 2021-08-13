@@ -40,6 +40,7 @@ module.exports.postPrimaryChecklist = async (req, res) => {
     } = req.body;
 
 
+
     const defectives = { d4180: d4180, d4179: d4179, d4178: d4178, d0004: d0004, d9046: d9046 }
     const guards = { g4180: g4180, g4179: g4179, g4178: g4178, g0004: g0004, g9046: g9046, gHydrBreaker: gHydrBreaker, gBeltScale: gBeltScale }
     //analyzes if defectives are checked or if guards are unchecked
@@ -81,11 +82,20 @@ module.exports.postPrimaryChecklist = async (req, res) => {
         }
     });
 
+    // if (defectsExist == "Yes") {
+    //     hd4180 = "1444180: " + hd4180;
+    //     hd4179 = "1444179: " + hd4179;
+    //     hd4178 = "1444178: " + hd4178;
+    //     hd0004 = "1740004: " + hd0004;
+    //     hd9046 = "1639046: " + hd9046;
+    // }
+
     const allDefects = [
         hd4180, hd4179, hd4178, hd0004, hd9046, hg4180, hg4179,
         hg4178, hg0004, hgHydrBreaker, hg9046,
         hgBeltScale,
     ]
+
     const allDefectsString = allDefects.filter(Boolean).join("\n");
 
     const allPriorities = [

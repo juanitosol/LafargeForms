@@ -6,7 +6,10 @@ function auto_grow(element) {
 function guardChecked(guardId, hiddenId) {
     var guardState = document.getElementById(guardId);
     var hiddenGuard = document.getElementById(hiddenId);
-    if (guardState.isChecked = "false") {
+    if (guardState.checked) {
         hiddenGuard.value = ""
+    }
+    else {
+        hiddenGuard.defaultValue;
     }
 }

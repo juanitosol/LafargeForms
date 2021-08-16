@@ -90,6 +90,8 @@ module.exports.postPrimaryChecklist = async (req, res) => {
     //     hd9046 = "1639046: " + hd9046;
     // }
 
+    console.log(hd4180);
+
     const allDefects = [
         hd4180, hd4179, hd4178, hd0004, hd9046, hg4180, hg4179,
         hg4178, hg0004, hgHydrBreaker, hg9046,

@@ -109,6 +109,120 @@
 
         <section>
             <h3>Conveyors</h3>
+            <!-- Repeat for Every Part copy/Paste-->
+            <h4>Feed to #8 1744076</h4>
+            <div class="formInputs">
+                <label class="spacing">
+                    <span>Gearbox Temp (°F)</span>
+                    <input type="number" name="gt4076" pattern="[0-9]*" inputmode="numeric">
+                </label>
+                <label class="spacing">
+                    <span>Guarding/Safety device</span>
+                    <input type="checkbox" name="g4076" id="g4076" value="checked"
+                        onchange="guardChecked('g4076','hg4076')">
+                </label>
+                <input id="hg4076" name="hg4076" type="hidden" value="Guard 1744076 Defective">
+                <label>
+                    <span>Defect Present</span>
+                    <input type="checkbox" name="d4076" value="checked"
+                        onchange="displayPrompt('defect1744076','hd4076','p4076')">
+                </label>
+                <div class="hiddenDefect" id="defect1744076">
+                    <label class="defectLabel">
+                        <span class="defectTitle">Defect:</span>
+                        <textarea oninput="auto_grow(this)" wrap="hard" cols="200" type="text" id="hd4076" name="hd4076"
+                            placeholder="Type Defect Here"></textarea>
+                    </label>
+                    <span class="prioritySelect">
+                        <span class="defectTitle">Priority:</span>
+                        <select name="p4076" id="p4076">
+                            <option value=""></option>
+                            <option value="1">1: Immediate</option>
+                            <option value="2">2: Next Shutdown (within 24hrs)</option>
+                            <option value="3">3: Next Maintenance Day</option>
+                            <option value="4">4: Backlog</option>
+                            <option value="5">5: Special Project</option>
+                        </select>
+                        <span class="dropdownArrow"></span>
+                    </span>
+                </div>
+            </div>
+            <!-- Repeat for Every Part copy/Paste-->
+            <h4>Fines Discharge 1744079</h4>
+            <div class="formInputs">
+                <label class="spacing">
+                    <span>Gearbox Temp (°F)</span>
+                    <input type="number" name="gt4079" pattern="[0-9]*" inputmode="numeric">
+                </label>
+                <label class="spacing">
+                    <span>Guarding/Safety device</span>
+                    <input type="checkbox" name="g4079" id="g4079" value="checked"
+                        onchange="guardChecked('g4079','hg4079')">
+                </label>
+                <input id="hg4079" name="hg4079" type="hidden" value="Guard 1744079 Defective">
+                <label>
+                    <span>Defect Present</span>
+                    <input type="checkbox" name="d4079" value="checked"
+                        onchange="displayPrompt('defect1744079','hd4079','p4079')">
+                </label>
+                <div class="hiddenDefect" id="defect1744079">
+                    <label class="defectLabel">
+                        <span class="defectTitle">Defect:</span>
+                        <textarea oninput="auto_grow(this)" wrap="hard" cols="200" type="text" id="hd4079" name="hd4079"
+                            placeholder="Type Defect Here"></textarea>
+                    </label>
+                    <span class="prioritySelect">
+                        <span class="defectTitle">Priority:</span>
+                        <select name="p4079" id="p4079">
+                            <option value=""></option>
+                            <option value="1">1: Immediate</option>
+                            <option value="2">2: Next Shutdown (within 24hrs)</option>
+                            <option value="3">3: Next Maintenance Day</option>
+                            <option value="4">4: Backlog</option>
+                            <option value="5">5: Special Project</option>
+                        </select>
+                        <span class="dropdownArrow"></span>
+                    </span>
+                </div>
+            </div>
+            <!-- Repeat for Every Part copy/Paste-->
+            <h4>Return Stone 1744800</h4>
+            <div class="formInputs">
+                <label class="spacing">
+                    <span>Gearbox Temp (°F)</span>
+                    <input type="number" name="gt4800" pattern="[0-9]*" inputmode="numeric">
+                </label>
+                <label class="spacing">
+                    <span>Guarding/Safety device</span>
+                    <input type="checkbox" name="g4800" id="g4800" value="checked"
+                        onchange="guardChecked('g4800','hg4800')">
+                </label>
+                <input id="hg4800" name="hg4800" type="hidden" value="Guard 1744800 Defective">
+                <label>
+                    <span>Defect Present</span>
+                    <input type="checkbox" name="d4800" value="checked"
+                        onchange="displayPrompt('defect1744800','hd4800','p4800')">
+                </label>
+                <div class="hiddenDefect" id="defect1744800">
+                    <label class="defectLabel">
+                        <span class="defectTitle">Defect:</span>
+                        <textarea oninput="auto_grow(this)" wrap="hard" cols="200" type="text" id="hd4800" name="hd4800"
+                            placeholder="Type Defect Here"></textarea>
+                    </label>
+                    <span class="prioritySelect">
+                        <span class="defectTitle">Priority:</span>
+                        <select name="p4800" id="p4800">
+                            <option value=""></option>
+                            <option value="1">1: Immediate</option>
+                            <option value="2">2: Next Shutdown (within 24hrs)</option>
+                            <option value="3">3: Next Maintenance Day</option>
+                            <option value="4">4: Backlog</option>
+                            <option value="5">5: Special Project</option>
+                        </select>
+                        <span class="dropdownArrow"></span>
+                    </span>
+                </div>
+            </div>
             <h4>Simplicity Discharge 1444278</h4>
             <!-- "h3" and "h4" are just titles with h3 being the bigger one these can be changed ^ -->
             <div class="formInputs">
@@ -453,44 +567,6 @@
                 </div>
             </div>
             <!-- Repeat for Every Part copy/Paste-->
-            <h4>Feed to #8 1744076</h4>
-            <div class="formInputs">
-                <label class="spacing">
-                    <span>Gearbox Temp (°F)</span>
-                    <input type="number" name="gt4076" pattern="[0-9]*" inputmode="numeric">
-                </label>
-                <label class="spacing">
-                    <span>Guarding/Safety device</span>
-                    <input type="checkbox" name="g4076" id="g4076" value="checked"
-                        onchange="guardChecked('g4076','hg4076')">
-                </label>
-                <input id="hg4076" name="hg4076" type="hidden" value="Guard 1744076 Defective">
-                <label>
-                    <span>Defect Present</span>
-                    <input type="checkbox" name="d4076" value="checked"
-                        onchange="displayPrompt('defect1744076','hd4076','p4076')">
-                </label>
-                <div class="hiddenDefect" id="defect1744076">
-                    <label class="defectLabel">
-                        <span class="defectTitle">Defect:</span>
-                        <textarea oninput="auto_grow(this)" wrap="hard" cols="200" type="text" id="hd4076" name="hd4076"
-                            placeholder="Type Defect Here"></textarea>
-                    </label>
-                    <span class="prioritySelect">
-                        <span class="defectTitle">Priority:</span>
-                        <select name="p4076" id="p4076">
-                            <option value=""></option>
-                            <option value="1">1: Immediate</option>
-                            <option value="2">2: Next Shutdown (within 24hrs)</option>
-                            <option value="3">3: Next Maintenance Day</option>
-                            <option value="4">4: Backlog</option>
-                            <option value="5">5: Special Project</option>
-                        </select>
-                        <span class="dropdownArrow"></span>
-                    </span>
-                </div>
-            </div>
-            <!-- Repeat for Every Part copy/Paste-->
             <h4>Cross Conveyor 1744077</h4>
             <div class="formInputs">
                 <label class="spacing">
@@ -528,82 +604,7 @@
                     </span>
                 </div>
             </div>
-            <!-- Repeat for Every Part copy/Paste-->
-            <h4>Fines Discharge 1744079</h4>
-            <div class="formInputs">
-                <label class="spacing">
-                    <span>Gearbox Temp (°F)</span>
-                    <input type="number" name="gt4079" pattern="[0-9]*" inputmode="numeric">
-                </label>
-                <label class="spacing">
-                    <span>Guarding/Safety device</span>
-                    <input type="checkbox" name="g4079" id="g4079" value="checked"
-                        onchange="guardChecked('g4079','hg4079')">
-                </label>
-                <input id="hg4079" name="hg4079" type="hidden" value="Guard 1744079 Defective">
-                <label>
-                    <span>Defect Present</span>
-                    <input type="checkbox" name="d4079" value="checked"
-                        onchange="displayPrompt('defect1744079','hd4079','p4079')">
-                </label>
-                <div class="hiddenDefect" id="defect1744079">
-                    <label class="defectLabel">
-                        <span class="defectTitle">Defect:</span>
-                        <textarea oninput="auto_grow(this)" wrap="hard" cols="200" type="text" id="hd4079" name="hd4079"
-                            placeholder="Type Defect Here"></textarea>
-                    </label>
-                    <span class="prioritySelect">
-                        <span class="defectTitle">Priority:</span>
-                        <select name="p4079" id="p4079">
-                            <option value=""></option>
-                            <option value="1">1: Immediate</option>
-                            <option value="2">2: Next Shutdown (within 24hrs)</option>
-                            <option value="3">3: Next Maintenance Day</option>
-                            <option value="4">4: Backlog</option>
-                            <option value="5">5: Special Project</option>
-                        </select>
-                        <span class="dropdownArrow"></span>
-                    </span>
-                </div>
-            </div>
-            <!-- Repeat for Every Part copy/Paste-->
-            <h4>Return Stone 1744800</h4>
-            <div class="formInputs">
-                <label class="spacing">
-                    <span>Gearbox Temp (°F)</span>
-                    <input type="number" name="gt4800" pattern="[0-9]*" inputmode="numeric">
-                </label>
-                <label class="spacing">
-                    <span>Guarding/Safety device</span>
-                    <input type="checkbox" name="g4800" id="g4800" value="checked"
-                        onchange="guardChecked('g4800','hg4800')">
-                </label>
-                <input id="hg4800" name="hg4800" type="hidden" value="Guard 1744800 Defective">
-                <label>
-                    <span>Defect Present</span>
-                    <input type="checkbox" name="d4800" value="checked"
-                        onchange="displayPrompt('defect1744800','hd4800','p4800')">
-                </label>
-                <div class="hiddenDefect" id="defect1744800">
-                    <label class="defectLabel">
-                        <span class="defectTitle">Defect:</span>
-                        <textarea oninput="auto_grow(this)" wrap="hard" cols="200" type="text" id="hd4800" name="hd4800"
-                            placeholder="Type Defect Here"></textarea>
-                    </label>
-                    <span class="prioritySelect">
-                        <span class="defectTitle">Priority:</span>
-                        <select name="p4800" id="p4800">
-                            <option value=""></option>
-                            <option value="1">1: Immediate</option>
-                            <option value="2">2: Next Shutdown (within 24hrs)</option>
-                            <option value="3">3: Next Maintenance Day</option>
-                            <option value="4">4: Backlog</option>
-                            <option value="5">5: Special Project</option>
-                        </select>
-                        <span class="dropdownArrow"></span>
-                    </span>
-                </div>
-            </div>
+
             <!-- Repeat with h3 Title for every Major Section -->
             <h3>Stackers</h3>
             <h4>2" Crusher Run 1442007</h4>

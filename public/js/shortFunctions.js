@@ -7,7 +7,8 @@ function guardChecked(guardId, hiddenId) {
     var guardState = document.getElementById(guardId);
     var hiddenGuard = document.getElementById(hiddenId);
     if (guardState.checked) {
-        hiddenGuard.value = ""
+        hiddenGuard.value = "";
+        return
     }
     else {
         hiddenGuard.defaultValue;

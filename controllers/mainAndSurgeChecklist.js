@@ -85,6 +85,15 @@ module.exports.postMainAndSurgeChecklist = async (req, res) => {
         hd4029, hd4030, hd4026, hd4027, hd4028, hg4029,
         hg4030, hg4026, hg4027, hg4028,
     ]
+
+    const prefixes = ['1444029', '1444030', '1444026', '1444027', '1444028']
+
+    for (let i = 0; i < 5; i++) {
+        if (allDefects[i]) {
+            allDefects[i] = `${prefixes[i]}: ${allDefects[i]}`;
+        }
+    }
+
     const allDefectsString = allDefects.filter(Boolean).join("\n");
 
     const allPriorities = [

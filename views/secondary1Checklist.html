@@ -120,7 +120,7 @@
                 </label>
                 <label class="spacing">
                     <span>Guarding/Safety device</span>
-                    <input type="checkbox" name="g1302" id="g1302" value="checked"
+                    <input type="checkbox" name="g1302" id="g1302" value="unc"
                         onchange="guardChecked('g1302','hg1302')">
                 </label>
                 <input id="hg1032" name="hg1302" type="hidden" value="Guard 1441302 Defective">
@@ -149,8 +149,8 @@
                     </span>
                 </div>
             </div>
-            <!-- Repeat for Every Part copy/Paste-->
-            <h4>#8 Simplicity 1741032</h4>
+            <h4>#1 Simplicity 1741032</h4>
+            <!-- "h3" and "h4" are just titles with h3 being the bigger one these can be changed ^ -->
             <div class="twoTemps">
                 <label class="spacing">
                     <span>Drive Side Temp (°F)</span>
@@ -165,7 +165,7 @@
                     <input type="checkbox" name="g1032" id="g1032" value="checked"
                         onchange="guardChecked('g1032','hg1032')">
                 </label>
-                <input id="hg1032" name="hg1032" type="hidden" value="Guard 444 Defective">
+                <input id="hg1032" name="hg1032" type="hidden" value="Guard 1741032 Defective">
                 <label>
                     <span>Defect Present</span>
                     <input type="checkbox" name="d1032" value="checked"
@@ -506,43 +506,6 @@
                     <span class="prioritySelect">
                         <span class="defectTitle">Priority:</span>
                         <select name="p2009" id="p2009">
-                            <option value=""></option>
-                            <option value="1">1: Immediate</option>
-                            <option value="2">2: Next Shutdown (within 24hrs)</option>
-                            <option value="3">3: Next Maintenance Day</option>
-                            <option value="4">4: Backlog</option>
-                            <option value="5">5: Special Project</option>
-                        </select>
-                        <span class="dropdownArrow"></span>
-                    </span>
-                </div>
-            </div>
-            <h4>HL6 1742042</h4>
-            <div class="formInputs">
-                <label class="spacing">
-                    <span>Gearbox Temp (°F)</span>
-                    <input type="number" name="gt2042" pattern="[0-9]*" inputmode="numeric">
-                </label>
-                <label class="spacing">
-                    <span>Guarding/Safety device</span>
-                    <input type="checkbox" name="g2042" id="g2042" value="checked"
-                        onchange="guardChecked('g2042','hg2042')">
-                </label>
-                <input id="hg2042" name="hg2042" type="hidden" value="Guard 1742042 Defective">
-                <label class="spacing">
-                    <span>Defect Present</span>
-                    <input type="checkbox" name="d2042" value="checked"
-                        onchange="displayPrompt('defect1742042', 'hd2042','p2042')">
-                </label>
-                <div class="hiddenDefect" id="defect1742042">
-                    <label class="defectLabel">
-                        <span class="defectTitle">Defect:</span>
-                        <textarea oninput="auto_grow(this)" wrap="hard" cols="200" type="text" id="hd2042" name="hd2042"
-                            placeholder="Type Defect Here"></textarea>
-                    </label>
-                    <span class="prioritySelect">
-                        <span class="defectTitle">Priority:</span>
-                        <select name="p2042" id="p2042">
                             <option value=""></option>
                             <option value="1">1: Immediate</option>
                             <option value="2">2: Next Shutdown (within 24hrs)</option>

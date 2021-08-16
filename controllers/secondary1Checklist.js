@@ -36,7 +36,6 @@ module.exports.postSecondary1Checklist = async (req, res) => {
         d4045, g4045, gt4045, hg4045, hd4045, p4045,
         d4120, g4120, gt4120, hg4120, hd4120, p4120,
         d2009, g2009, gt2009, hg2009, hd2009, p2009,
-        d2042, g2042, gt2042, hg2042, hd2042, p2042,
     } = req.body;
 
 
@@ -44,13 +43,11 @@ module.exports.postSecondary1Checklist = async (req, res) => {
         d1302: d1302, d1032: d1032, d1028: d1028,
         d2349: d2349, d4055: d4055, d4058: d4058,
         d4045: d4045, d4120: d4120, d2009: d2009,
-        d2042: d2042
     }
     const guards = {
         g1302: g1302, g1032: g1032, g1028: g1028,
         g2349: g2349, g4055: g4055, g4058: g4058,
         g4045: g4045, g4120: g4120, g2009: g2009,
-        g2042: g2042
     }
     //analyzes if defectives are checked or if guards are unchecked
     const defectArray = []; //array is empty, but will systematically input any defects or issues into it
@@ -83,7 +80,7 @@ module.exports.postSecondary1Checklist = async (req, res) => {
                 [date, employee, shift,
                     dst1302, ndst1302, dst1032, ndst1032,
                     dst1028, ndst1028, dst2349, ndst2349,
-                    gt4055, gt4058, gt4045, gt4120, gt2009, gt2042,
+                    gt4055, gt4058, gt4045, gt4120, gt2009,
                     isAllGuardsChecked, defectsExist, '-',
                 ], //these are the values that will be input into a single row, order matters
             ]
@@ -92,16 +89,30 @@ module.exports.postSecondary1Checklist = async (req, res) => {
 
     const allDefects = [
         hd1302, hd1032, hd1028, hd2349, hd4055,
-        hd4058, hd4045, hd4120, hd2009, hd2042,
-        hg1302, hg1032, hg1028, hg2349, hg4055,
-        hg4058, hg4045, hg4120, hg2009, hg2042
+        hd4058, hd4045, hd4120, hd2009, hg1302,
+        hg1032, hg1028, hg2349, hg4055,
+        hg4058, hg4045, hg4120, hg2009,
     ]
+
+    const prefixes = [
+        '1441302', '1741032', '1741028', '10142349', '1444055',
+        '1444058', '1444045', '1444120', '1442009',
+    ]
+
+    for (let i = 0; i < 9; i++) {
+        if (allDefects[i]) {
+            allDefects[i] = `${prefixes[i]}: ${allDefects[i]}`;
+            console.log(allDefects[i]);
+            console.log(allDefects);
+        }
+    }
+
     const allDefectsString = allDefects.filter(Boolean).join("\n");
 
     const allPriorities = [
         p1302, p1032, p1028, p2349,
         p4055, p4058, p4045, p4120,
-        p2009, p2042
+        p2009,
     ]
     const allPrioritiesString = allPriorities.filter(Boolean).join("\n");
 

@@ -26,23 +26,29 @@ module.exports.postPrimaryChecklist = async (req, res) => {
 
     //collect data from req.body by destructuring the object. These are the variables that represent each section of the form filled
     const {
-        employee, date, shift,
-        d4180, g4180, gt4180,
-        d4179, g4179, gt4179,
-        d4178, g4178, gt4178,
-        d0004, g0004, dst0004, ndst0004,
-        gHydrBreaker,
-        d9046, g9046, dst9046, ndst9046,
-        gBeltScale, sections, hg4180, hg4179,
-        hg4178, hg0004, hgHydrBreaker, hg9046, hgBeltScale,
-        hd4180, hd4179, hd4178, hd0004,
-        hd9046, p4180, p4179, p4178, p0004, p9046,
+        employee, date, shift, sections,
+        d4180, g4180, gt4180, hg4180, hd4180, p4180,
+        d4179, g4179, gt4179, hg4179, hd4179, p4179,
+        d4178, g4178, gt4178, hg4178, hd4178, p4178,
+        d0004, g0004, dst0004, ndst0004, hg0004, hd0004, p0004,
+        gHydrBreaker, hgHydrBreaker,
+        d9046, g9046, dst9046, ndst9046, hg9046, hd9046, p9046,
+        gBeltScale, hgBeltScale,
+
     } = req.body;
 
 
 
-    const defectives = { d4180: d4180, d4179: d4179, d4178: d4178, d0004: d0004, d9046: d9046 }
-    const guards = { g4180: g4180, g4179: g4179, g4178: g4178, g0004: g0004, g9046: g9046, gHydrBreaker: gHydrBreaker, gBeltScale: gBeltScale }
+    const defectives = {
+        d4180: d4180, d4179: d4179, d4178: d4178,
+        d0004: d0004, d9046: d9046
+    }
+    const guards = {
+        g4180: g4180, g4179: g4179, g4178: g4178,
+        g0004: g0004, g9046: g9046, gHydrBreaker: gHydrBreaker,
+        gBeltScale: gBeltScale
+    }
+
     //analyzes if defectives are checked or if guards are unchecked
     const defectArray = []; //array is empty, but will systematically input any defects or issues into it
     let isAllGuardsChecked = 'Yes';
@@ -72,8 +78,7 @@ module.exports.postPrimaryChecklist = async (req, res) => {
         resource: {
             values: [
                 [date, employee, shift,
-                    gt4180, gt4179,
-                    gt4178,
+                    gt4180, gt4179, gt4178,
                     dst0004, ndst0004,
                     dst9046, ndst9046,
                     isAllGuardsChecked, defectsExist, '-',
@@ -82,21 +87,22 @@ module.exports.postPrimaryChecklist = async (req, res) => {
         }
     });
 
-    // if (defectsExist == "Yes") {
-    //     hd4180 = "1444180: " + hd4180;
-    //     hd4179 = "1444179: " + hd4179;
-    //     hd4178 = "1444178: " + hd4178;
-    //     hd0004 = "1740004: " + hd0004;
-    //     hd9046 = "1639046: " + hd9046;
-    // }
-
-    console.log(hd4180);
-
     const allDefects = [
         hd4180, hd4179, hd4178, hd0004, hd9046, hg4180, hg4179,
         hg4178, hg0004, hgHydrBreaker, hg9046,
         hgBeltScale,
     ]
+
+    const prefixes = ['1444180', '1444179', '1444178', '1740004', '1639046'] // An array of prefixes for each defect
+
+    //The for loop is used to cycle through 5 defects (hence why i = 0 and increases up to 5), 
+    // and for each defect that has a message (giving it a truthy value), the corresponding prefix is then
+    // addded infront of the defect message. It's important that the correct index of the prefix and defect match.
+    for (let i = 0; i < 5; i++) {
+        if (allDefects[i]) {
+            allDefects[i] = `${prefixes[i]}: ${allDefects[i]}`;
+        }
+    }
 
     const allDefectsString = allDefects.filter(Boolean).join("\n");
 

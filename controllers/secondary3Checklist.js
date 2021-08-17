@@ -110,6 +110,21 @@ module.exports.postSecondary3Checklist = async (req, res) => {
         hg4062, hg4142, hg4048, hg4049, hg4050,
         hg4051, hg4057
     ]
+
+    const prefixes = [
+        '1739009', '1439015', '1444034', '1444035',
+        '1444036', '1444037', '1444038', '1444039',
+        '1444040', '1444062', '1744142', '1444048',
+        '1444049', '1444050', '1444051', '1444057',
+
+
+    ]
+
+    for (let i = 0; i < 16; i++) {
+        if (allDefects[i]) {
+            allDefects[i] = `${prefixes[i]}: ${allDefects[i]}`;
+        }
+    }
     const allDefectsString = allDefects.filter(Boolean).join("\n");
 
     const allPriorities = [

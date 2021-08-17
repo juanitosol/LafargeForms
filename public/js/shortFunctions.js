@@ -3,7 +3,7 @@ function auto_grow(element) {
     element.style.height = (element.scrollHeight) + "px";
 }
 
-function guardChecked(guardId, hiddenId) {
+function guardChecked(guardId, hiddenId, originalValue) {
     var guardState = document.getElementById(guardId);
     var hiddenGuard = document.getElementById(hiddenId);
     if (guardState.checked) {
@@ -11,6 +11,6 @@ function guardChecked(guardId, hiddenId) {
         return
     }
     else {
-        hiddenGuard.defaultValue;
+        hiddenGuard.value = originalValue
     }
 }

@@ -102,8 +102,6 @@ module.exports.postSecondary1Checklist = async (req, res) => {
     for (let i = 0; i < 9; i++) {
         if (allDefects[i]) {
             allDefects[i] = `${prefixes[i]}: ${allDefects[i]}`;
-            console.log(allDefects[i]);
-            console.log(allDefects);
         }
     }
 

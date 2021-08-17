@@ -112,6 +112,22 @@ module.exports.postSecondary4Checklist = async (req, res) => {
         hg4047, hg4118, hg4077, hg2007, hg2010,
         hg2025, hg2023, hg2270,
     ]
+
+    const prefixes = [
+        '1744076', '1744079', '1744800', '1444278',
+        '1444031', '1444032', '1444117', '1444123',
+        '1444116', '1444046', '1444047', '1444118',
+        '1744077', '1442007', '1442010', '1442025',
+        '1742023', '1442270'
+    ]
+
+
+    for (let i = 0; i < 18; i++) {
+        if (allDefects[i]) {
+            allDefects[i] = `${prefixes[i]}: ${allDefects[i]}`;
+        }
+    }
+
     const allDefectsString = allDefects.filter(Boolean).join("\n");
 
     const allPriorities = [

@@ -7,16 +7,23 @@ body{
     font-family: "Source Sans Pro", sans-serif;
     position: relative;
 }
+
 .headerImages{
-    display: flex;
+   display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+    min-width: 360px;
 }
 .lafargeLogo{
     max-width: 248px;
+    min-width: 170px;
+    width: 40%;
+    height: 10%;
 }
 .maintenanceLogo{
     max-width: 113px;
+    min-width: 78px;
+    width: 18%;
 }
 h1{
     margin-top: 3%;
@@ -409,9 +416,6 @@ input[type="number"]{
     flex-basis: 50%;
     justify-content: space-around;
     max-width: 420px;
-    }
-    .headerImages{
-        justify-content: space-around;
     }
     textArea{
         flex-basis: 90%;

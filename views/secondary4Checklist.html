@@ -18,8 +18,8 @@
     <header>
         <!-- This Header Includes the Logos and Titles, Try not to change the Logo Sizing but the Titles can just be changed! -->
         <div class="headerImages">
-            <img src="../public/images/lafargeLogo.png" class="lafargeLogo" width="40%" height="10%">
-            <img src="../public//images/maintenanceLogo.png" class="maintenanceLogo" width="18%">
+            <img src="../public/images/lafargeLogo.png" class="lafargeLogo">
+            <img src="../public//images/maintenanceLogo.png" class="maintenanceLogo">
         </div>
         <!-- Change Titles Below between h1 and h2 tags -->
         <h1>Brechin Daily Checklist</h1>
@@ -633,44 +633,6 @@
                     <span class="prioritySelect">
                         <span class="defectTitle">Priority:</span>
                         <select name="p2007" id="p2007">
-                            <option value=""></option>
-                            <option value="1">1: Immediate</option>
-                            <option value="2">2: Next Shutdown (within 24hrs)</option>
-                            <option value="3">3: Next Maintenance Day</option>
-                            <option value="4">4: Backlog</option>
-                            <option value="5">5: Special Project</option>
-                        </select>
-                        <span class="dropdownArrow"></span>
-                    </span>
-                </div>
-            </div>
-            <!-- Repeat for Every Part copy/Paste-->
-            <h4>3/4" Crusher Run 1442010</h4>
-            <div class="formInputs">
-                <label class="spacing">
-                    <span>Gearbox Temp (°F)</span>
-                    <input type="number" name="gt2010" pattern="[0-9]*" inputmode="numeric">
-                </label>
-                <label class="spacing">
-                    <span>Guarding/Safety device</span>
-                    <input type="checkbox" name="g2010" id="g2010" value="checked"
-                        onchange="guardChecked('g2010','hg2010','Guard 1442010 Defective')">
-                </label>
-                <input id="hg2010" name="hg2010" type="hidden" value="Guard 1442010 Defective">
-                <label>
-                    <span>Defect Present</span>
-                    <input type="checkbox" name="d2010" value="checked"
-                        onchange="displayPrompt('defect1442010','hd2010','p2010')">
-                </label>
-                <div class="hiddenDefect" id="defect1442010">
-                    <label class="defectLabel">
-                        <span class="defectTitle">Defect:</span>
-                        <textarea oninput="auto_grow(this)" wrap="hard" cols="200" type="text" id="hd2010" name="hd2010"
-                            placeholder="Type Defect Here"></textarea>
-                    </label>
-                    <span class="prioritySelect">
-                        <span class="defectTitle">Priority:</span>
-                        <select name="p2010" id="p2010">
                             <option value=""></option>
                             <option value="1">1: Immediate</option>
                             <option value="2">2: Next Shutdown (within 24hrs)</option>

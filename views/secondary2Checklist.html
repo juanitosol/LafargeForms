@@ -481,43 +481,6 @@
             </div>
             <!-- Repeat with h3 Title for every Major Section -->
             <h3>Stackers</h3>
-            <h4>Screenings 1442050</h4>
-            <div class="formInputs">
-                <label class="spacing">
-                    <span>Gearbox Temp (°F)</span>
-                    <input type="number" name="gt2050" pattern="[0-9]*" inputmode="numeric">
-                </label>
-                <label class="spacing">
-                    <span>Guarding/Safety device</span>
-                    <input type="checkbox" name="g2050" id="g2050" value="checked"
-                        onchange="guardChecked('g2050','hg2050','Guard 1442050 Defective')">
-                </label>
-                <input id="hg2050" name="hg2050" type="hidden" value="Guard 1442050 Defective">
-                <label class="spacing">
-                    <span>Defect Present</span>
-                    <input type="checkbox" name="d2050" value="checked"
-                        onchange="displayPrompt('defect1442050', 'hd2050','p2050')">
-                </label>
-                <div class="hiddenDefect" id="defect1442050">
-                    <label class="defectLabel">
-                        <span class="defectTitle">Defect:</span>
-                        <textarea oninput="auto_grow(this)" wrap="hard" cols="200" type="text" id="hd2050" name="hd2050"
-                            placeholder="Type Defect Here"></textarea>
-                    </label>
-                    <span class="prioritySelect">
-                        <span class="defectTitle">Priority:</span>
-                        <select name="p2050" id="p2050">
-                            <option value=""></option>
-                            <option value="1">1: Immediate</option>
-                            <option value="2">2: Next Shutdown (within 24hrs)</option>
-                            <option value="3">3: Next Maintenance Day</option>
-                            <option value="4">4: Backlog</option>
-                            <option value="5">5: Special Project</option>
-                        </select>
-                        <span class="dropdownArrow"></span>
-                    </span>
-                </div>
-            </div>
             <h4>3/4" Clear 1442010</h4>
             <div class="formInputs">
                 <label class="spacing">

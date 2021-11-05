@@ -35,21 +35,18 @@ module.exports.postSecondary2Checklist = async (req, res) => {
         d4052, g4052, gt4052, hg4052, hd4052, p4052,
         d4041, g4041, gt4041, hg4041, hd4041, p4041,
         d4043, g4043, gt4043, hg4043, hd4043, p4043,
-        d2050, g2050, gt2050, hg2050, hd2050, p2050,
         d2010, g2010, gt2010, hg2010, hd2010, p2010,
     } = req.body;
 
     const defectives = {
         d1304: d1304, d1318: d1318, d1078: d1078,
         d1080: d1080, d4054: d4054, d4052: d4052,
-        d4041: d4041, d4043: d4043, d2050: d2050,
-        d2010: d2010
+        d4041: d4041, d4043: d4043, d2010: d2010
     }
     const guards = {
         g1304: g1304, g1318: g1318, g1078: g1078,
         g1080: g1080, g4054: g4054, g4052: g4052,
-        g4041: g4041, g4043: g4043, g2050: g2050,
-        g2010: g2010
+        g4041: g4041, g4043: g4043, g2010: g2010
     }
     //analyzes if defectives are checked or if guards are unchecked
     const defectArray = []; //array is empty, but will systematically input any defects or issues into it
@@ -82,7 +79,7 @@ module.exports.postSecondary2Checklist = async (req, res) => {
                 [date, employee, shift,
                     dst1304, ndst1304, dst1318, ndst1318,
                     dst1078, ndst1078, dst1080, ndst1080,
-                    gt4054, gt4052, gt4041, gt4043, gt2050, gt2010,
+                    gt4054, gt4052, gt4041, gt4043, gt2010,
                     isAllGuardsChecked, defectsExist, '-',
                 ], //these are the values that will be input into a single row, order matters
             ]
@@ -92,15 +89,15 @@ module.exports.postSecondary2Checklist = async (req, res) => {
     const allDefects = [
         hd1304, hd1318, hd1078, hd1080,
         hd4054, hd4052, hd4041, hd4043,
-        hd2050, hd2010, hg1304, hg1318,
-        hg1078, hg1080, hg4054, hg4052,
-        hg4041, hg4043, hg2050, hg2010
+        hd2010, hg1304, hg1318, hg1078,
+        hg1080, hg4054, hg4052, hg4041,
+        hg4043, hg2050, hg2010
     ]
 
     const prefixes = [
         '1441304', '1441318', '1641078', '1641080',
         '1444054', '1444052', '1444041', '1444043',
-        '1442050', '1442010'
+        '1442010'
     ]
 
     for (let i = 0; i < 10; i++) {
@@ -114,7 +111,7 @@ module.exports.postSecondary2Checklist = async (req, res) => {
     const allPriorities = [
         p1304, p1318, p1078, p1080,
         p4054, p4052, p4041, p4043,
-        p2050, p2010
+        p2010
     ]
     const allPrioritiesString = allPriorities.filter(Boolean).join("\n");
 
